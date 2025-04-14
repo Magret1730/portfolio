@@ -1,0 +1,89 @@
+// @use "../../partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.nav {
+    
+
+    &__box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 1rem;
+
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: $background-primary;
+        background: $background-linear-gradient;
+        width: 100%;
+    }
+
+    &__logo {
+        font-weight: 400;
+        font-size: 1.5rem;
+        flex: 1;
+        letter-spacing: 0.3rem;
+    }
+
+    &__icon {
+        cursor: pointer;
+    }
+
+    &__ellipsis {
+        cursor: pointer;
+    }
+
+    &__icon {
+        width: 1.5rem;
+    }
+
+    &__links {
+        display: none;
+
+        &--display {
+            @include flex(column, center, flex-start);
+            gap: 0.5rem;
+            transition: all 2s ease-out;
+            margin-top: 6rem;
+        }
+    }
+
+    &__link-container {
+        position: relative;
+        width: 7.5rem;
+        padding: 1rem 15rem 1rem 0.2rem;
+        font-size: 1.25rem;
+        margin-top: 0.5rem;
+        transition: all 2s ease-out;
+
+        &:after {
+            content: " ";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding-right: 12rem;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border: 2px solid blue;
+            margin-left: -2rem;
+            transform: skew(-30deg, 0deg);
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        padding: 0rem 1.5rem 0rem 4rem;
+        cursor: pointer;
+        display: block;
+
+        &:hover {
+            color: blue;
+            font-weight: 600;
+        }
+    }
+
+
+}

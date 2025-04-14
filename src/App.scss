@@ -1,0 +1,11 @@
+@use "../src/styles/partials/global" as *;
+
+body {
+  background: rgb(223, 251, 252);
+  background: linear-gradient(90deg, rgb(223, 251, 252) 0%, rgba(45,58,253,1) 100%);
+  transition: all .3s;
+}
+
+// .app {
+//   // padding: 2rem 1rem;
+// }

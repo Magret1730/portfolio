@@ -1,0 +1,52 @@
+@use "../../styles/partials/mixins" as *;
+
+    .hero {
+    margin-top: 4.5rem;
+    padding: 2rem 1rem;
+
+    &--margin {
+        margin-top: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    &__header {
+        font-size: .99rem;
+        font-weight: 100;
+        padding-bottom: 0.3rem;
+    }
+
+    &__subheader {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding-bottom: 0.3rem;
+    }
+
+    &__title {
+        font-size: 1.05rem;
+        font-weight: 300;
+        padding-bottom: 0.5rem;
+        color: purple;
+    }
+
+    &__texts {
+        font-size: .99rem;
+        line-height: 1.1rem;
+    }
+
+    &__images {
+        margin: 0rem 1rem;
+        @include flex(row, center, center);
+    }
+
+    &__box {
+        @include flex(row, center, center);
+        background: blue;
+        border-radius: 50%;
+    }
+
+    &__image {
+        width: 90%;
+        border-radius: 50%;
+        border: 2px solid blue;
+    }
+}
