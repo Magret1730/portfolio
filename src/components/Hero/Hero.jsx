@@ -17,11 +17,11 @@ export default function Hero({ ellipsisCLick }) {
                 <Button name={"My Resume"}/>
             </section>
 
-            <section className="hero__images">
+            {/* <section className="hero__images">
                 <div className="hero__box">
                     <img className="hero__image" src={PersonalImage} alt="Personal Picture" />
                 </div>
-            </section>
+            </section> */}
         </>
     )
 }
