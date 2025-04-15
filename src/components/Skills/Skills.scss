@@ -1,0 +1,19 @@
+@use "../../styles/partials/mixins" as *;
+
+.skills {
+    margin: null, 1rem;
+
+    &__header {
+        @include header;
+    }
+
+    &__frontend {
+        // @include flex(row, flex-start, center);
+        // gap: 0.5rem;
+        // flex-wrap: wrap;
+        // margin-right: 0.5rem;
+        padding: null, 0rem;
+        margin: 0;
+    }
+}
+

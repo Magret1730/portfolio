@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+
+.about {
+    margin: 2rem 1rem;
+}
+
+.about__header {
+    @include header;
+}
+
+.about__text {
+    margin-bottom: 1rem;
+
+    &-button {
+        display: block;
+        // padding-top: 0.5rem;
+    }
+
+    &-link {
+        display: block;
+    }
+}

@@ -1,8 +1,9 @@
 @use "../src/styles/partials/global" as *;
 
 body {
+  // background: rgb(36, 38, 49);
   background: rgb(223, 251, 252);
-  background: linear-gradient(90deg, rgb(223, 251, 252) 0%, rgba(45,58,253,1) 100%);
+  // background: linear-gradient(90deg, rgb(223, 251, 252) 0%, rgba(45,58,253,1) 100%);
   transition: all .3s;
 }
 
