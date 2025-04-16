@@ -9,7 +9,7 @@ export default function Skills() {
     const skillsFrontBacks = ["HTML", "CSS", "Sass", "Bootstrap", "JavaScript", "React", "Node.js", "Express.js", "Python", "Flask", "PostgreSQL", "MySQL", "Knex.js", "Sequelize", "Git", "Github", "RESTful-API", "Responsive-Web-Design", "Agile"];
 
     return (
-        <section className="skills">
+        <section className="skills" id="Skills">
             <h1 className="skills__header">Skills</h1>
             {/* <section className="skills__frontend">
                 {frontEndSkills.map((frontendSkill, index) =>  {

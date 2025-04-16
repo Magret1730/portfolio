@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 
+
 function App() {
   const [ ellipsisCLick, setEllipsisClick ] = useState(false);
 
@@ -21,6 +22,12 @@ function App() {
       <Skills />
       <Projects />
     </section>
+
+    // <>
+    //   <Routes>
+    //     <Route path="/about" element={} />
+    //   </Routes>
+    // </>
   )
 }
 

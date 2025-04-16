@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 export default function About() {
 
     return (
-        <section className="about">
+        <section className="about" id="About">
             <h1 className="about__header">About</h1>
             <section className="about__texts">
                 <div className="about__text">

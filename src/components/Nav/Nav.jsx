@@ -1,9 +1,25 @@
 import DarkIcon from "../../assets/Icons/dark-mode.png";
+import LightIcon from "../../assets/Icons/light-mode.png";
 import "./Nav.scss";
 import Ellipsis from "../../assets/Icons/ellipsis.png";
 import EllipsisClose from "../../assets/Icons/ecclipsisClose.png";
+import { useState } from "react";
 
 export default function Nav({ handleEllipsisClick, ellipsisCLick }) {
+
+    const [darkMode, setDarkMode] = useState(false);
+
+    // Toggle function
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+        document.body.classList.toggle("dark-theme");
+    };
+
+    // In Nav component:
+    <section className="nav__bright" onClick={toggleDarkMode}>
+    <img className="nav__icon" src={darkMode ? LightIcon : DarkIcon} alt="Toggle theme" />
+    </section>
+
     return (
         <section className="nav">
             <article className="nav__box">

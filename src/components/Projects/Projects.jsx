@@ -9,7 +9,7 @@ import HarryPotter from "../../assets/Images/harry-potter.png";
 
 const Projects = () => {
     return (
-        <section className="projects">
+        <section className="projects" id="Projects">
             <h1 className="projects__header">Projects</h1>
 
             <section className="projects__box">

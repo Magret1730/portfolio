@@ -1,5 +1,5 @@
 import "./Hero.scss";
-import PersonalImage from "../../assets/Images/magret.png";
+// import PersonalImage from "../../assets/Images/magret.png";
 import Button from "../Button/Button";
 
 export default function Hero({ ellipsisCLick }) {
