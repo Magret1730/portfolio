@@ -1,0 +1,207 @@
+// .contact {
+//     max-width: 1200px;
+//     margin: 5rem auto;
+//     padding: 0 2rem;
+
+//     &__container {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         gap: 4rem;
+
+//         @media (max-width: 768px) {
+//             grid-template-columns: 1fr;
+//         }
+//     }
+
+//     &__info {
+//         h1 {
+//             font-size: 2.5rem;
+//             margin-bottom: 1rem;
+//             font-weight: 600;
+//         }
+
+//         p {
+//             font-size: 1.1rem;
+//             color: #666;
+//             margin-bottom: 2rem;
+//             line-height: 1.6;
+//         }
+//     }
+
+//     &__links {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 1.2rem;
+
+//         a,
+//         .contact__detail {
+//             display: flex;
+//             align-items: center;
+//             gap: 0.8rem;
+//             color: #333;
+//             text-decoration: none;
+//             font-size: 1.1rem;
+//             transition: color 0.3s;
+
+//             &:hover {
+//                 color: #000;
+//             }
+
+//             span {
+//                 font-size: 1.2rem;
+//             }
+//         }
+//     }
+
+//     &__form {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 1.5rem;
+
+//         .form__group {
+
+//             input,
+//             textarea {
+//                 width: 100%;
+//                 padding: 0.8rem 1rem;
+//                 border: 1px solid #ddd;
+//                 border-radius: 4px;
+//                 font-size: 1rem;
+//                 transition: border 0.3s;
+
+//                 &:focus {
+//                     border-color: #000;
+//                     outline: none;
+//                 }
+
+//                 &::placeholder {
+//                     color: #999;
+//                 }
+//             }
+
+//             textarea {
+//                 resize: vertical;
+//                 min-height: 120px;
+//             }
+//         }
+
+//         .submit__button {
+//             background: #000;
+//             color: #fff;
+//             border: none;
+//             padding: 1rem 2rem;
+//             font-size: 1rem;
+//             font-weight: 500;
+//             border-radius: 4px;
+//             cursor: pointer;
+//             transition: background 0.3s;
+
+//             &:hover {
+//                 background: #333;
+//             }
+//         }
+//     }
+// }
+
+
+.contact {
+    padding: 4rem 1rem;
+    background: #f9f9f9;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+
+    &__info {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #111;
+    }
+
+    &__text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: #444;
+    }
+
+    &__details-text {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    &__links {
+        margin-top: 1rem;
+
+        &-link {
+            display: inline-block;
+            margin-right: 1rem;
+            font-weight: 500;
+            color: #0072b1;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__form {
+        flex: 1;
+        // min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        &-group {
+            display: flex;
+            flex-direction: column;
+
+            &-label {
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+            }
+
+            &-input {
+                padding: 0.8rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+                resize: vertical;
+            }
+
+            textarea {
+                padding: 0.8rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+                resize: vertical;
+                height: 200px;
+            }
+        }
+    }
+
+    &__submit {
+        background: #0072b1;
+        color: #fff;
+        padding: 0.9rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: #005f91;
+        }
+    }
+}
