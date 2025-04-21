@@ -1,13 +1,23 @@
 import { toast } from "react-toastify";
 import "./Contact.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import isEmail from 'validator/lib/isEmail';
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+    const form = useRef();
+
     const [ name, setName ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ subject, setSubject ] = useState("");
     const [ message, setMessage ] = useState("");
+
+    // const [emailTouched, setEmailTouched] = useState(false);
+
+    // const handleEmailBlur = () => {
+    //     setEmailTouched(true);
+    //     isEmailValid(email); // Validate only when field loses focus
+    // };
 
     // Function handles name change in state variable
     const handleChangeName = (event) => {
@@ -23,6 +33,7 @@ export default function Contact() {
 
         setEmail(value);
         isEmailValid(value);
+
     }
 
         // Function handles subject change in state variable
@@ -56,6 +67,8 @@ export default function Contact() {
 
      // Function validates change of email
     const isEmailValid = (email) => {
+        // if (!emailTouched) return false;
+
         if (!email) {
             toast.error("Email is required!!!");
             return false;
@@ -72,7 +85,7 @@ export default function Contact() {
         if (!subject) {
             toast.error("Subject is required!!!");
             return false;
-        } else if (subject < 50 ) {
+        } else if (subject.length > 50 ) {
             toast.error("Subject must be under 50 characters.");
             return false;
         } else {
@@ -114,13 +127,27 @@ export default function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!isFormValid()) {
+            return
+        }
+
         try {
-            if (isFormValid()) {
-                return true
-            }
+            await emailjs.sendForm (
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form.current,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
+            toast.success("Message sent successfully!");
+            // Clear form fields
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
         } catch (error) {
-            console.error("Email not sent:", error.message);
-            toast.error(error.message);
+            toast.error("Message not sent. Please try again.");
+            console.error("EmailJS error:", error);
         }
     } 
 
@@ -129,7 +156,7 @@ export default function Contact() {
         <section className="contact" id="Contact">
             <div className="contact__container">
                 <div className="contact__info">
-                    <h1 className="contact__title">Let’s Work Together</h1>
+                    <h1 className="contact__title">Get in Touch</h1>
                     <p className="contact__text">
                         I’m always open to discussing product design work or partnership opportunities.
                     </p>
@@ -146,11 +173,12 @@ export default function Contact() {
                     </div>
                 </div>
 
-                <form className="contact__form" onSubmit={handleSubmit}>
+                <form className="contact__form" ref={form} onSubmit={handleSubmit}>
                     <div className="contact__form-group">
                         <label className="contact__form-group-label" >Full Name</label>
                         <input
                             className="contact__form-group-input"
+                            name="name"
                             type="text"
                             placeholder="John Doe"
                             value={name}
@@ -162,10 +190,14 @@ export default function Contact() {
                         <label className="contact__form-group-label" >Email</label>
                         <input
                             className="contact__form-group-input"
+                            name="email"
                             type="email"
                             placeholder="you@example.com"
                             value={email}
                             onChange={handleChangeEmail}
+                            // onBlur={handleEmailBlur}
+                            // onMouseOut={handleEmailBlur}
+                            // on={handleEmailBlur}
                         />
                     </div>
 
@@ -173,6 +205,7 @@ export default function Contact() {
                         <label className="contact__form-group-label" >Subject</label>
                         <input
                             className="contact__form-group-input"
+                            name="subject"
                             type="text"
                             placeholder="Let's build something amazing"
                             value={subject}
@@ -184,150 +217,16 @@ export default function Contact() {
                         <label className="contact__form-group-label" >Message</label>
                         <textarea
                             className="contact__form-group-textarea"
+                            name="message"
                             placeholder="Type your message here..."
                             value={message}
                             onChange={handleChangeMessage}
                         />
                     </div>
 
-                    <button type="submit" className="contact__submit">Send Message</button>
+                    <button type="submit" className="contact__submit">Get in touch</button>
                 </form>
             </div>
-
-
-            {/* <section className="contact__container">
-                <div className="contact__info">
-                    <h1>Get in Touch</h1>
-                    <p>Feel free to reach out for collaborations or just a friendly hello.</p>
-                    
-                    <div className="contact__links">
-                        <a href="mailto:belloabiodun17@email.com" target="_blank" rel="noopener">
-                            <span>📧</span> belloabiodun17@email.com
-                        </a>
-                        <a href="https://github.com/Magret1730" target="_blank" rel="noopener">
-                            <span>💻</span> github.com/Magret1730
-                        </a>
-                        <a href="https://linkedin.com/in/oyedele-abiodun/" target="_blank" rel="noopener">
-                            <span>🔗</span> linkedin.com/in/oyedele-abiodun
-                        </a>
-                        <div className="contact__detail">
-                            <span>📍</span> St. John's, Canada
-                        </div>
-                        <div className="contact__detail">
-                            <span>📞</span> +1 (709) 219-7797
-                        </div>
-                    </div>
-                </div>
-
-                <form className="contact__form" onSubmit={handleSubmit}>
-                    <div className="form__group">
-                        <input
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            placeholder="Full Name"
-                            required
-                        />
-                    </div>
-                    <div className="form__group">
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Email"
-                            required
-                        />
-                    </div>
-                    <div className="form__group">
-                        <input
-                            type="text"
-                            value={subject}
-                            onChange={(e) => setSubject(e.target.value)}
-                            placeholder="Subject"
-                            maxLength="50"
-                            required
-                        />
-                    </div>
-                    <div className="form__group">
-                        <textarea
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder="Your message..."
-                            rows="5"
-                            required
-                        />
-                    </div>
-                    <button type="submit" className="submit__button">
-                        Send Message
-                    </button>
-                </form>
-            </section> */}
-
-
-            {/* <section className="contact__box">
-                <h1 className="contact__title">Get in Touch</h1>
-                <div className="contact__description">
-                    Feel free to reach out for collaborations or just a friendly hello.
-                </div>
-                <section className="contact__links">
-                        <a href="mailto:belloabiodun17@email.com" target="_blank" rel="noopener">
-                            📧 Email
-                        </a>
-                        <a href="https://github.com/Magret1730" target="_blank" rel="noopener">
-                            💻 GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/oyedele-abiodun/" target="_blank" rel="noopener">
-                            🔗 LinkedIn
-                        </a>
-                </section>
-            </section>
-
-            <form className="contact__form" onSubmit={handleSubmit}>
-                <label> Full Name
-                    <input
-                        type="text"
-                        className=""
-                        placeholder="Enter name "
-                        onChange={handleChangeName}
-                        value={name}
-                    />
-                </label>
-
-                <label>Your Email
-                    <input
-                        type="text"
-                        className=""
-                        placeholder="Enter Email"
-                        onChange={handleChangeEmail}
-                        value={email}
-                    />
-                </label>
-
-                <label>Subject
-                    <input
-                        type="text"
-                        className=""
-                        placeholder="Enter Email Subject"
-                        onChange={handleChangeSubject}
-                        value={subject}
-                    />
-                </label>
-
-                <label>Message
-                    <input
-                        type="text"
-                        className=""
-                        placeholder="Enter message"
-                        onChange={handleChangeMessage}
-                        value={message}
-                    />
-                </label>
-
-                <p>📍 St. John's, Canada</p>
-                <p>📞 +1 (709) 219-7797</p>
-
-                <button className="contact__submit">Get in touch</button>
-            </form> */}
         </section>
     )
 }

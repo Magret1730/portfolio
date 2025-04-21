@@ -49,12 +49,6 @@ function App() {
       {/* ToastContainer to render toasts notifications */}
       <ToastContainer />
     </section>
-
-    // <>
-    //   <Routes>
-    //     <Route path="/about" element={} />
-    //   </Routes>
-    // </>
   )
 }
 
