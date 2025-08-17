@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
 
         <div className="footer__contact">
-          <h3 className="footer__contact-title">Get in Touch</h3>
+          <h3 className="footer__contact-title">Contact</h3>
           <p className="footer__contact-info">
             <strong>Email:</strong> <a href="mailto:belloabiodun17@gmail.com" className="footer__contact-link">belloabiodun17@gmail.com</a>
           </p>

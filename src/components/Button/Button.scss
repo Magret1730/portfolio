@@ -12,7 +12,7 @@
       color: $supporting-color;
     
       &:hover {
-        background-color: $secondary-primary-link-text-color;
+        transform: translateY(-3px);
       }
     }
     

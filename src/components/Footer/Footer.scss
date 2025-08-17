@@ -9,17 +9,13 @@
     @include flex(row, space-between, center);
     flex-wrap: wrap;
     gap: 2rem;
-
-    // &>div {
-    //   flex: 1;
-    //   min-width: 200px;
-    // }
   }
 
   &__brand-title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: $tertiary-text-color;
+    letter-spacing: 0.1rem;
   }
 
   &__brand-description {
