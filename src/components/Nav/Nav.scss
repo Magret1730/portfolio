@@ -7,7 +7,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: $background-secondary;
+  background: $supporting-color;
   @include desktop-spacing;
 
 
@@ -21,6 +21,13 @@
     &:hover {
         transform: translateY(-2px);
       }
+  }
+
+  &__logo {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+    background-color: transparent
   }
 
   &__links {

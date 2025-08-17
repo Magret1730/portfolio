@@ -34,10 +34,10 @@ export default function Hero() {
 
         <div className="hero__buttons fade-in-left">
           <Link to="/contact">
-            <Button name="Get in Touch" style="button__box fade-in-left" />
+            <Button name="Get in Touch" style="button__box" />
           </Link>
           <Link to="/projects">
-            <Button name="View my Work" style="button__boxed fade-in-left" />
+            <Button name="View my Work" style="button__boxed" />
           </Link>
         </div>
 

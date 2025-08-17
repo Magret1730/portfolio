@@ -5,7 +5,10 @@ import Button from "../Button/Button";
 export default function Nav() {
   return (
     <section className="nav">
-      <NavLink className="nav__icon" to="/">Magret</NavLink>
+      <NavLink className="nav__icon" to="/">
+        <img src="/logo64.svg" alt="Magret's Logo" className="nav__logo" />
+        Magret
+      </NavLink>
 
       <section className="nav__links">
         <NavLink

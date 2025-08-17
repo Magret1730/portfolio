@@ -6,7 +6,7 @@ import Skills from "../../components/Skills/Skills";
 export default function About() {
   return (
     <section className="about" id="About">
-      <h1 className="about__header">About Me</h1>
+      {/* <h1 className="about__header">About Me</h1> */}
 
       {/* Top Section */}
       <section className="about__top">
