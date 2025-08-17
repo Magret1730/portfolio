@@ -6,20 +6,20 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import Icon from "../Icon/ICon";
 
 export default function Hero() {
-    const icons = [
-      {
-        component: <FaGithub />,
-        link: "https://github.com/Magret1730",
-        style: "hero__social fade-in-left",
-        linkStyle: "hero__social-link"
-      },
-      {
-        component: <FaLinkedinIn />,
-        link: "https://www.linkedin.com/in/oyedele-abiodun/",
-        style: "hero__social fade-in-left",
-        linkStyle: "hero__social-link"
-      }
-    ];
+  const icons = [
+    {
+      component: <FaGithub />,
+      link: "https://github.com/Magret1730",
+      style: "hero__social fade-in-left",
+      linkStyle: "hero__social-link"
+    },
+    {
+      component: <FaLinkedinIn />,
+      link: "https://www.linkedin.com/in/oyedele-abiodun/",
+      style: "hero__social fade-in-left",
+      linkStyle: "hero__social-link"
+    }
+  ];
 
   return (
     <div className="hero fade-in-left">
