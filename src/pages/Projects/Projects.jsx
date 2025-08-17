@@ -59,7 +59,7 @@ const Projects = ({all}) => {
       liveLink: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
       githubLink: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game"
     }
-    //Snaps
+    // Snaps, Keyin Second Semester Project (Context API)
   ];
 
   const displayedProjects = all ? projectData : projectData.slice(0, 4);

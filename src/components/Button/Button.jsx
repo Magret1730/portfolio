@@ -1,4 +1,3 @@
-// Button.jsx
 import "./Button.scss";
 
 export default function Button({ name, style, href, download }) {

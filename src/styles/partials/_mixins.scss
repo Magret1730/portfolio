@@ -32,3 +32,11 @@
 @mixin desktop-spacing {
   padding: 1.5rem 8rem;
 }
+
+@mixin tablet-spacing {
+  padding: 1rem 4rem;
+}
+
+@mixin mobile-spacing {
+  padding: 0.5rem 1rem;
+}

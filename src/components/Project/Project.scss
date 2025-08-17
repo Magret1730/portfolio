@@ -76,7 +76,7 @@
   &__skill-badge {
     padding: 0.25rem 0.75rem;
     font-size: 0.75rem;
-    background-color: #cce0ff; // light pastel background
+    background-color: #cce0ff;
     color: $primary-link-text-color;
     border-radius: 0.5rem;
     font-weight: 500;
@@ -86,7 +86,6 @@
 
   &__skill-badge {
     padding: 0.25rem 0.75rem;
-    // margin-left: 0.5rem;
     font-size: 0.75rem;
     color: $primary-link-text-color;
     background-color: $secondary-primary-link-text-color;
@@ -98,5 +97,55 @@
 
   @media (max-width: 900px) {
     width: 100%;
+  }
+}
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .project {
+    @include tablet-spacing;
+    width: 100%;
+    min-height: auto;
+
+    &__image-wrapper {
+      height: 220px;
+    }
+
+    &__content {
+      padding: 1.25rem;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .project {
+    @include mobile-spacing;
+
+    &__image-wrapper {
+      height: 180px;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    &__description {
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    &__skills {
+      justify-content: center;
+    }
   }
 }

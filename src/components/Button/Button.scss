@@ -68,11 +68,31 @@
       }
 
   }
-}
 
-// @media (max-width: 500px) {
-//   &__skills-skill {
-//     overflow-x: auto;
-//     flex-wrap: nowrap;
-//   }
-// }
+  /* Tablet (≤900px) */
+  @media (max-width: 900px) {
+    font-size: 1.1rem;
+
+    &__nav-box,
+    &__box,
+    &__home-contact,
+    &__boxed,
+    &__skills {
+      padding: 0.5rem 0.9rem;
+    }
+  }
+
+  /* Mobile (≤600px) */
+  @media (max-width: 600px) {
+    font-size: 1rem;
+
+    &__nav-box,
+    &__box,
+    &__home-contact,
+    &__boxed,
+    &__skills {
+      padding: 0.45rem 0.8rem;
+      font-size: 0.95rem;
+    }
+  }
+}

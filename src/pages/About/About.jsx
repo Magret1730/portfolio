@@ -2,6 +2,7 @@ import "./About.scss";
 import Button from "../../components/Button/Button";
 import PersonalImage from "../../assets/Images/magret.png";
 import Skills from "../../components/Skills/Skills";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
@@ -45,10 +46,14 @@ export default function About() {
           </div>
 
           <div className="about__buttons">
-            <Button
-              name="Get in Touch"
-              style="button__box"
-            />
+
+            <Link to="/contact">
+              <Button
+                name="Get in Touch"
+                style="button__box"
+                className="about__button"
+              />
+            </Link>
             <Button
               name="Download CV"
               style="button__boxed"

@@ -43,7 +43,11 @@ const Home_About_Skill = () => {
 
           <div className="home-about-skill__buttons">
             <Link to="/about">
-              <Button className="home-about-skill__button" name="More About Me" style="button__box" />
+              <Button
+
+                name="More About Me"
+                style="button__box"
+              />
             </Link>
             <Button
               name="Download CV"

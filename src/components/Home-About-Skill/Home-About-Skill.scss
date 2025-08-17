@@ -35,11 +35,6 @@
   &__details-box {
     @include flex(row, none, flex-start);
     gap: 4rem;
-
-    // @media (max-width: 900px) {
-    //   flex-direction: column;
-    //   gap: 2rem;
-    // }
   }
 
   /* About Section */
@@ -51,6 +46,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
   &__detail {
@@ -64,10 +60,6 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-  }
-
-  &__button {
-    cursor: pointer;
   }
 
   &__cv-link {
@@ -108,5 +100,73 @@
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
+  }
+}
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .home-about-skill {
+    @include tablet-spacing;
+
+    &__details-box {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    &__details-about {
+      max-width: 100%;
+    }
+
+    &__skills-title {
+      font-size: 1.35rem;
+    }
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .home-about-skill {
+    @include mobile-spacing;
+    padding: 0.5rem 1rem;
+
+    &__title {
+      font-size: 1.5rem;
+      text-align: center;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20%;
+      }
+    }
+
+    &__description {
+      font-size: 1rem;
+      margin: 1.5rem auto 2rem auto;
+    }
+
+    &__details-about {
+      min-width: 270px;
+      max-width: 400px;
+    }
+
+    &__buttons {
+      @include flex(column, center, center);
+      margin-bottom: 4rem;
+    }
+
+    &__skills-title {
+      text-align: center;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 25%;
+      }
+    }
+
+    &__skills-skill {
+      justify-content: center;
+    }
   }
 }

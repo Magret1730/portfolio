@@ -5,7 +5,9 @@
 npm run dev -->
 
 # To do
-<!-- 1. Animations
-2. Media Query
-5. Theme. dark and light view
-7. Use chatgpt to create a logo for the website -->
+<!-- 
+1. Animations
+2. Add Snaps, Keyin last semester project(Context API)
+3. Theme. dark and light view
+4. Finetune README
+-->
