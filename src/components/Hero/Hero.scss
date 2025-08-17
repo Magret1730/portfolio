@@ -1,54 +1,77 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
-    .hero {
-    margin-top: 4.5rem;
-    padding: 2rem 1rem;
+.hero {
+  @include desktop-spacing;
+  @include flex(row, space-between, center);
 
-    &--margin {
-        // margin-top: 2rem;
-        // margin-top: 28rem;
-        margin-top: 5rem;
-        padding: 2rem 1rem;
+  // @media (max-width: 900px) {
+  //   flex-direction: column;
+  //   text-align: center;
+  //   padding: 3rem 5%;
+  // }
+
+  &__box {
+    max-width: 500px;
+  }
+
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $secondary-text-color;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subheader {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $tertiary-text-color;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $sub-primary-text-color;
+    margin-bottom: 1.5rem;
+  }
+
+  &__texts {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: $primary-text-color;
+    margin-bottom: 2rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  &__social {
+    color: $primary-link-text-color;
+    font-size: 1.5rem;
+
+    &:hover {
+      transform: translateY(-3px);
     }
+  }
 
-    &__header {
-        font-size: .99rem;
-        font-weight: 100;
-        padding-bottom: 0.3rem;
-    }
+  &__image {
+      width: 600px;
+      height: 90vh;
+      border-radius: 1rem;
+      object-fit: cover;
 
-    &__subheader {
-        font-size: 1.2rem;
-        font-weight: 500;
-        padding-bottom: 0.3rem;
-    }
-
-    &__title {
-        font-size: 1.05rem;
-        font-weight: 300;
-        padding-bottom: 0.5rem;
-        color: purple;
-    }
-
-    &__texts {
-        font-size: .99rem;
-        line-height: 1.1rem;
-    }
-
-    &__images {
-        margin: 0rem 1rem;
-        @include flex(row, center, center);
-    }
-
-    &__box {
-        @include flex(row, center, center);
-        background: blue;
-        border-radius: 50%;
-    }
-
-    &__image {
-        width: 90%;
-        border-radius: 50%;
-        border: 2px solid blue;
+      // @media (max-width: 600px) {
+      //   width: 100%;
+      //   max-width: 320px;
+      // }
     }
 }

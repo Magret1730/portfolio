@@ -1,58 +1,21 @@
-import DarkIcon from "../../assets/Icons/dark-mode.png";
-import LightIcon from "../../assets/Icons/light-mode.png";
+import { NavLink } from "react-router-dom";
 import "./Nav.scss";
-import Ellipsis from "../../assets/Icons/ellipsis.png";
-import EllipsisClose from "../../assets/Icons/ecclipsisClose.png";
-import { useState } from "react";
+import Button from "../Button/Button";
 
-export default function Nav({ handleEllipsisClick, ellipsisCLick }) {
+export default function Nav() {
+  return (
+    <section className="nav">
+      <NavLink className="nav__icon" to="/">Oyedele</NavLink>
 
-    const [darkMode, setDarkMode] = useState(false);
-
-    // Toggle function
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-        document.body.classList.toggle("dark-theme");
-    };
-
-    // In Nav component:
-    <section className="nav__bright" onClick={toggleDarkMode}>
-    <img className="nav__icon" src={darkMode ? LightIcon : DarkIcon} alt="Toggle theme" />
+      <section className="nav__links">
+        <NavLink className="nav__link" to="/">Home</NavLink>
+        <NavLink className="nav__link" to="/about">About</NavLink>
+        <NavLink className="nav__link" to="/projects">Projects</NavLink>
+        {/* <NavLink className="nav__link" to="/resume">Resume</NavLink> */}
+        <NavLink className="nav__link" to="/contact">
+          <Button name="Get in Touch" style="button__nav-box" />
+        </NavLink>
+      </section>
     </section>
-
-    return (
-        <section className="nav">
-            <article className="nav__box">
-                <section className="nav__logo">
-                    Oyedele
-                </section>
-
-                <section className="nav__bright">
-                    <img className="nav__icon" src={DarkIcon} alt="Dark-Mode-Icon" />
-                </section>
-
-                <section className="nav__ellipsis"  onClick={handleEllipsisClick}>
-                    <img src={ ellipsisCLick ? EllipsisClose : Ellipsis } alt="Ellipsis" />
-                </section>
-            </article>
-
-            <section className={ ellipsisCLick ? "nav__links--display" : "nav__links"}>
-                <div className="nav__link-container">
-                    <a className="nav__link" href="#About">About</a>
-                </div>
-                <div className="nav__link-container">
-                    <a className="nav__link" href="#Skills">Skills</a>
-                </div>
-                <div className="nav__link-container">
-                    <a className="nav__link" href="#Resume">Resume</a>
-                </div>
-                <div className="nav__link-container">
-                    <a className="nav__link" href="#Projects">Projects</a>
-                </div>
-                <div className="nav__link-container">
-                    <a className="nav__link" href="#Contact">Contact</a>
-                </div>
-            </section>
-        </section>
-    )
+  )
 }

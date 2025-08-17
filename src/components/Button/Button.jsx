@@ -1,9 +1,23 @@
+// Button.jsx
 import "./Button.scss";
 
-export default function Button({name}) {
+export default function Button({ name, style, href, download }) {
+  if (href) {
     return (
-        <div className="button">
-            <button className="button__box">{name}</button>
-        </div>
-    )
+      <a 
+        href={href} 
+        download={download} 
+        className={`button ${style}`}
+      >
+        {name}
+      </a>
+    );
+  }
+
+  return (
+    <button className={`button ${style}`}>
+      {name}
+    </button>
+  );
 }
+

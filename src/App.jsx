@@ -1,16 +1,15 @@
 import './App.scss';
 import Nav from './components/Nav/Nav';
-import { useState } from 'react';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Skills from './components/Skills/Skills';
-import Projects from './components/Projects/Projects';
-import Contact from './components/Contact/Contact';
+import Home from './pages/Home/Home';
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Route, Routes } from 'react-router-dom';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import Projects from './pages/Projects/Projects';
+import "./styles/partials/_global.scss";
 
 function App() {
-  const [ ellipsisCLick, setEllipsisClick ] = useState(false);
-
   const showToast = (type, message) => {
     if (type === "success") {
       toast.success(message, {
@@ -33,20 +32,15 @@ function App() {
     }
   };
 
-  const handleEllipsisClick = () => {
-    setEllipsisClick(!ellipsisCLick);
-  }
-
   return (
     <section className='app'>
-      <Nav handleEllipsisClick={handleEllipsisClick} ellipsisCLick={ellipsisCLick}/>
-      <Hero ellipsisCLick={ellipsisCLick}/>
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-
-      {/* ToastContainer to render toasts notifications */}
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
       <ToastContainer />
     </section>
   )

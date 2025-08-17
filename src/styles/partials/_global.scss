@@ -1,18 +1,22 @@
-@use "./variables" as *;
-@use "./mixins" as *;
-@use "./typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/animations" as *;
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  background-color: $background-secondary;
 }
 
 body {
-    font-family: "Quicksand", sans-serif;
-    background: $background-primary;
-    // background: $background-linear-gradient;
+  font-family: "Quicksand", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }

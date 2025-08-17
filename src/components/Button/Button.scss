@@ -1,23 +1,67 @@
+@use "../../styles/partials/variables" as *;
+
 .button {
-    display: inline;
-    // padding: 0.4rem 0.3rem 0.8rem 0rem;
-    // background-color: blue;
+    font-size: 1.2rem;
     cursor: pointer;
+    border-radius: 8px;
 
-    &:hover {
-        padding: 0.4rem 0.5rem 1rem 0rem;
+    &__nav-box {
+      padding: 1rem 1rem;
+      background-color: $primary-link-text-color;
+      border: none;
+      color: $supporting-color;
+    
+      &:hover {
+        background-color: $secondary-primary-link-text-color;
+      }
     }
-
+    
+    
     &__box {
-        background-color: none;
-        outline: none;
-        // border: 2px solid blue;
-        padding: 0.5rem 1.5rem;
-        margin-top: 1rem;
-        margin-right: 0.5rem;
-        color: purple;
-        font-weight: 500;
-        letter-spacing: 0.1rem;
-        cursor: pointer;
+      padding: 0.6rem 1rem;
+      background-color: $primary-link-text-color;
+      border: none;
+      color: $supporting-color;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
     }
+
+    &__boxed {
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      border: 2px solid $primary-link-text-color;
+      color: $primary-link-text-color;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+
+    &__skills {
+      padding: 0.4rem 0.9rem;
+      background-color: transparent;
+      border: 1px solid $primary-link-text-color;
+      color: $primary-link-text-color;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $primary-link-text-color;
+        color: $supporting-color;
+        transform: translateY(-2px);
+      }
+
+  }
 }
+
+// @media (max-width: 500px) {
+//   &__skills-skill {
+//     overflow-x: auto;
+//     flex-wrap: nowrap;
+//   }
+// }

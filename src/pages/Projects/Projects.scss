@@ -15,7 +15,7 @@
         overflow: hidden;
         max-width: 900px;
         margin: 40px auto;
-        transition: transform 0.3s ease;
+        // transition: transform 0.3s ease;
 
         &:hover {
             transform: translateY(-10px);
@@ -75,7 +75,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
-            transition: background-color 0.3s ease;
+            // transition: background-color 0.3s ease;
 
             &:hover {
                 background-color: #333;

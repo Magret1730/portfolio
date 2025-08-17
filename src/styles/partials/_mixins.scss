@@ -1,12 +1,16 @@
 @mixin flex($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin header {
-    @include flex(row, center, center);
-    margin-bottom: 1rem;
-    font-size: 2rem;
+  @include flex(row, center, center);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+@mixin desktop-spacing {
+  padding: 1.5rem 8rem;
 }

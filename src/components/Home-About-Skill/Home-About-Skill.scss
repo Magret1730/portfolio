@@ -1,0 +1,114 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+// @use "../../styles/partials/animations" as *;
+
+.home-about-skill {
+  @include desktop-spacing;
+  margin-top: 3rem;
+  
+  &__title {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $tertiary-text-color;
+    margin-bottom: 0.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 6%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $primary-link-text-color;
+    }
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    color: $secondary-text-color;
+    margin: 2rem auto 3rem auto;
+    text-align: center;
+  }
+
+  &__details-box {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+
+    // @media (max-width: 900px) {
+    //   flex-direction: column;
+    //   gap: 2rem;
+    // }
+  }
+
+  /* About Section */
+  &__details-about {
+    min-width: 350px;
+    max-width: 700px;
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__detail {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $primary-text-color;
+  }
+
+  &__buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__cv-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Skills Section */
+  &__details-skills {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__skills-title {
+    font-size: 1.5rem;
+    color: $tertiary-text-color;
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 15%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $primary-link-text-color;
+      }
+  }
+
+  &__skills-skill {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}
