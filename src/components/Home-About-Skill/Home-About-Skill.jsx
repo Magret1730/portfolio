@@ -1,13 +1,7 @@
 import "./Home-About-Skill.scss";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
-
-const skills = [
-  "React.js", "HTML", "CSS", "Bootstrap", "Node.js", "Express.js", "Flask", "Sequelize",
-  "Next.js", "Typescript", "Sass", "Knex.js",
-  "PostgreSQL", "MySQL", "JavaScript", "Python", "Git", "GitHub", "VSCode", "Postman", "Jira",
-  "Adaptability", "Collaboration", "Creativity", "Continuous Learning", "Communication",
-];
+import Skills from "../Skills/Skills";
 
 const Home_About_Skill = () => {
   return (
@@ -64,13 +58,7 @@ const Home_About_Skill = () => {
         <div className="home-about-skill__details-skills">
           <h3 className="home-about-skill__skills-title">My Skills</h3>
           <div className="home-about-skill__skills-skill">
-            {skills.map((skill, idx) => (
-              <Button
-                key={idx}
-                name={skill}
-                style="button__skills"
-              />
-            ))}
+            <Skills />
           </div>
         </div>
       </div>

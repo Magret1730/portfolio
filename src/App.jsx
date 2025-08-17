@@ -8,6 +8,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Projects from './pages/Projects/Projects';
 import "./styles/partials/_global.scss";
+import Footer from './components/Footer/Footer';
 
 function App() {
   const showToast = (type, message) => {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects all={true} />} />
       </Routes>
+      <Footer />
       <ToastContainer />
     </section>
   )

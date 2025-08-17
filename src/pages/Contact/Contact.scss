@@ -3,7 +3,7 @@
 
 .contact {
     @include desktop-spacing;
-    margin-top: 5rem;
+    margin-top: 8rem;
 
     &__container {
         max-width: 1200px;
@@ -19,10 +19,15 @@
     }
 
     &__title {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #111;
-    }
+			font-size: 2rem;
+			// margin-bottom: 1rem;
+			color: #111;
+			font-weight: 700;
+			margin: 0 0 1.5rem;
+			border-left: 4px solid $primary-link-text-color;
+			padding-left: 0.75rem;
+			color: $primary-text-color;
+		}
 
     &__text {
         font-size: 1rem;

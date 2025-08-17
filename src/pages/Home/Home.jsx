@@ -3,7 +3,6 @@ import Hero from '../../components/Hero/Hero';
 import Home_About_Skill from "../../components/Home-About-Skill/Home-About-Skill";
 import Projects from '../Projects/Projects';
 import HomeContact from "../../components/HomeContact/HomeContact";
-import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -12,7 +11,6 @@ const Home = () => {
       <Home_About_Skill />
       <Projects all={false}/>
       <HomeContact />
-      <Footer />
     </div>
   )
 }

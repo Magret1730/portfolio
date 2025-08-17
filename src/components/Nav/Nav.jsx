@@ -30,7 +30,7 @@ export default function Nav() {
             Download CV
         </a>
         <NavLink
-          className={({ isActive }) => isActive ? "nav__link nav__link--active" : "nav__link"}
+          className="nav__link"
           to="/contact">
           <Button name="Get in Touch" style="button__nav-box" />
         </NavLink>
