@@ -28,6 +28,17 @@
       }
     }
 
+    &__home-contact {
+      padding: 0.6rem 1rem;
+      color: $primary-link-text-color;
+      border: none;
+      background-color: $supporting-color;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+
     &__boxed {
       padding: 0.5rem 1rem;
       background-color: transparent;

@@ -1,85 +1,30 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .projects {
-    margin: null, 1rem;
-
+    @include desktop-spacing;
+    margin-top: 5rem;
+    
     &__header {
-        @include header;
+      @include header;
     }
 
-    &-card {
-        @include flex(column, null, null);
-        background-color: #ffffff;
-        border-radius: 16px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
-        max-width: 900px;
-        margin: 40px auto;
-        // transition: transform 0.3s ease;
+    &__description {
+      font-size: 1.25rem;
+      color: $secondary-text-color;
+      margin: 2rem auto 3rem auto;
+      text-align: center;
+      margin: 2rem auto 5rem auto;
+    }
 
-        &:hover {
-            transform: translateY(-10px);
-        }
+    &__cards {
+      @include flex(row, space-between, center);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
 
-        &__image {
-            width: 100%;
-            object-fit: cover;
-            height: auto;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        &__content {
-            padding: 1.5rem;
-            // border: 1px solid red;
-            @include flex(column, center, center);
-        }
-
-        &__title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #1e1e1e;
-        }
-
-        &__description {
-            font-size: 1rem;
-            // line-height: 1.6;
-            color: #555;
-            margin-bottom: 12px;
-            // border: 1px solid red;
-            @include flex(column, center, center);
-        }
-
-        &__skills {
-            font-size: 0.95rem;
-            color: #777;
-            font-style: italic;
-            margin-bottom: 24px;
-            // border: 1px solid red;
-            @include flex(column, center, center);
-        }
-
-        &__links {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        &__button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            background-color: #1e1e1e;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            // transition: background-color 0.3s ease;
-
-            &:hover {
-                background-color: #333;
-            }
-        }
+    &__button {
+      @include flex(row, center, center);
+      margin: 2rem auto;
     }
 }

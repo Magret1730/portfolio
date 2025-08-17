@@ -4,206 +4,86 @@ import Instock from "../../assets/Images/instock.png";
 import Bookhive from "../../assets/Images/bookhive.png";
 import TaskifyHub from "../../assets/Images/taskify-hub.png"; 
 import SeamLess from "../../assets/Images/seamless.png";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import HarryPotter from "../../assets/Images/harry-potter.png";
+import Project from "../../components/Project/Project";
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 
-const Projects = () => {
-    return (
-        <section className="projects" id="Projects">
-            <h1 className="projects__header">Projects</h1>
+const Projects = ({all}) => {
+  const projectData = [
+    {
+      image: InstaloanXFrontpage,
+      title: "InstaloanX",
+      description: "A loan management app allowing users to apply, repay, and track loans while enabling admins to update statuses efficiently.",
+      skills: "React, Express.js, JWT, Bcrypt, Knex.js, MySQL, Sass",
+      liveLink: "https://instaloanx.netlify.app/",
+      githubLink: "https://github.com/Magret1730/instaloanx-app"
+    },
+    {
+      image: Instock,
+      title: "Instock",
+      description: "A collaborative inventory management app that lets users manage warehouses and items through an intuitive interface.",
+      skills: "React, Express.js, Node.js, Sass, Knex.js, MySQL",
+      liveLink: "https://github.com/kngo/group2-instock",
+      githubLink: "https://github.com/kngo/group2-instock"
+    },
+    {
+      image: Bookhive,
+      title: "Bookhive",
+      description: "A platform for discovering and reviewing books with seamless access to a RESTful API for book data.",
+      skills: "React, REST API, Sass",
+      liveLink: "https://bookhive.netlify.app/",
+      githubLink: "https://github.com/Magret1730/bookhive"
+    },
+    {
+      image: TaskifyHub,
+      title: "TaskifyHub",
+      description: "A task management app that helps users organize, prioritize, and track tasks with responsive design and authentication.",
+      skills: "React, Node.js, Express.js, MongoDB, Sass",
+      liveLink: "https://taskifyhub.netlify.app/",
+      githubLink: "https://github.com/Magret1730/taskifyhub"
+    },
+    {
+      image: SeamLess,
+      title: "SeamLess",
+      description: "A transportation booking platform connecting users to local services with a simple and user-friendly interface.",
+      skills: "React, Redux, Sass",
+      liveLink: "https://seamless.netlify.app/",
+      githubLink: "https://github.com/Magret1730/seamless"
+    },
+    {
+      image: HarryPotter,
+      title: "Harry Potter",
+      description: "A fan-made website showcasing characters, spells, and information about the Harry Potter series.",
+      skills: "HTML, CSS, JavaScript",
+      liveLink: "https://harrypotter.netlify.app/",
+      githubLink: "https://github.com/Magret1730/harry-potter"
+    }
+    //Snaps
+  ];
 
-            <section className="projects__box">
-                <section className="projects-cards">
-                    {/* Seamless(Hackathon, Industrial Project), HarryPotter(Hackathon),
-                        Snaps, Bookhive, TaskifyHub  */}
+  const displayedProjects = all ? projectData : projectData.slice(0, 4);
 
-                    <section className="projects-card">
-                        <img className="projects-card__image" src={InstaloanXFrontpage} alt="" />
+  return (
+    <section className="projects">
+      <h1 className="projects__header">Featured Projects</h1>
+      {!all &&
+        <p className="projects__description">Here are some of my projects.</p>
+      }
 
-                        <section className="projects-card__content">
-                            <h3 className="project-card__title">InstaloanX</h3>
+      <div className="projects__cards">
+        {displayedProjects.map((project, index) => (
+          <Project key={index} project={project} />
+        ))}
+      </div>
 
-                            <div className="projects-card__description">
-                                InstaloanX is a loan management application with authentication where users can apply and repay
-                                loans and admins can change the status of a loan.
-                            </div>
-                            <div className="projects-card__skills">
-                                React, Express.js, JWT, Brcypt, Knex.js, MySQL, Sass
-                            </div>
-
-                            <div className="projects-card__links">
-                                <a
-                                    href="https://instaloanx.netlify.app/"
-                                    alt="InstaloanX Application"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Live App <FaExternalLinkAlt /> 
-                                </a>
-                                <a
-                                    href="https://github.com/Magret1730/instaloanx-app"
-                                    alt="InstaloanX Application"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Github <FaGithub /> 
-                                </a>
-                            </div>
-                        </section>
-                    </section>
-
-                    <section className="projects-card">
-                        <img className="projects-card__image" src={Instock} alt="Instock FrontPage Image" />
-
-                        <section className="projects-card__content">
-                            <h3 className="project-card__title">Instock</h3>
-
-                            <div className="projects-card__description">
-                                InStock is a full-stack inventory management application built with React and Express.js.
-                                Developed in collaboration with two other team members, the app enables users to manage
-                                warehouses and inventory items through a user-friendly interface with full CRUD functionality.
-                            </div>
-                            <div className="projects-card__skills">
-                                React, Express.js, Node.js, Sass, Knex.js, MySQL
-                            </div>
-
-                            <div className="projects-card__links">
-                                <a
-                                    href="https://github.com/kngo/group2-instock"
-                                    alt="Instock"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Github <FaGithub /> 
-                                </a>
-                            </div>
-                        </section>
-                    </section>
-
-                    <section className="projects-card">
-                        <img className="projects-card__image" src={Bookhive} alt="Bookhive Application Image" />
-
-                        <section className="projects-card__content">
-                            <h3 className="project-card__title">Bookhive – Library Management Backend</h3>
-
-                            <div className="projects-card__description">
-                                Bookhive is a backend library management system that allows users to browse, review, and
-                                borrow books, while admins can manage the book catalog. It features secure user authentication,
-                                password reset via email, and role-based access for users and admins.
-                            </div>
-                            <div className="projects-card__skills">
-                                Node.js, Express.js, JWT, Brcypt, Sequelize, PostgreSQL
-                            </div>
-
-                            <div className="projects-card__links">
-                                <a
-                                    href="https://github.com/Magret1730/BookHive-Portfolio-Project"
-                                    alt="Bookhive Application"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Github <FaGithub /> 
-                                </a>
-                            </div>
-                        </section>
-                    </section>
-
-                    <section className="projects-card">
-                        <img className="projects-card__image" src={TaskifyHub} alt="Taskify Hub Application" />
-
-                        <section className="projects-card__content">
-                            <h3 className="project-card__title">Taskify Hub</h3>
-
-                            <div className="projects-card__description">
-                                Taskify Hub is a task management web application designed to help users organize their tasks
-                                efficiently. With Taskify Hub, users can create, update, and delete tasks, set due dates,
-                                mark tasks as complete, and more.
-                            </div>
-                            <div className="projects-card__skills">
-                                HTML, CSS, Bootstrap, Flask, SQLite, Python
-                            </div>
-
-                            <div className="projects-card__links">
-                                <a
-                                    href="https://taskifyhub.pythonanywhere.com/"
-                                    alt="Taskify Hub Application"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Live App <FaExternalLinkAlt /> 
-                                </a>
-                                <a
-                                    href="https://github.com/Magret1730/taskify-hub-portfolio-project"
-                                    alt="Taskify Hub Application"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Github <FaGithub /> 
-                                </a>
-                            </div>
-                        </section>
-                    </section>
-
-                    <section className="projects-card">
-                        <img className="projects-card__image" src={SeamLess} alt="Bookhive Application Image" />
-
-                        <section className="projects-card__content">
-                            <h3 className="project-card__title">SeamLess</h3>
-
-                            <div className="projects-card__description">
-                                SEAMLESS is an hackathon project. It is an interactive quiz game designed to educate users
-                                about AI tools and their real-life applications. The game presents daily activity-based
-                                questions and provides insights into how AI enhances various aspects of life.
-                            </div>
-                            <div className="projects-card__skills">
-                                Node.js, Express.js, MySQL, Sass, React, Knex.js
-                            </div>
-
-                            <div className="projects-card__links">
-                                <a
-                                    href="https://github.com/Magret1730/omnicoders-ip-client"
-                                    alt="SeamLess Application"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Github <FaGithub /> 
-                                </a>
-                            </div>
-                        </section>
-                    </section>
-
-                    <section className="projects-card">
-                        <img className="projects-card__image" src={HarryPotter} alt="HarryPotter Application Image" />
-
-                        <section className="projects-card__content">
-                            <h3 className="project-card__title">HarryPotter</h3>
-
-                            <div className="projects-card__description">
-                                This is a fun and interactive web-based game where players guess the names of Harry Potter
-                                characters based on their images. It was developed as part of a hackathon project, showcasing
-                                creativity, problem-solving, and technical skills.
-                            </div>
-                            <div className="projects-card__skills">
-                                HTML, CSS, Sass, Javascript
-                            </div>
-
-                            <div className="projects-card__links">
-                                <a
-                                    href="https://github.com/AlexandriaBalkaran/Harry-Potter-Game"
-                                    alt="HarryPotter Application"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="projects-card__button">
-                                    Github <FaGithub /> 
-                                </a>
-                            </div>
-                        </section>
-                    </section>
-
-                </section>
-            </section>
-        </section>
-    )
+      { all === false &&
+        <Link to="/projects" className="projects__button">
+          <Button name="View All Projects" style="button__box" />
+        </Link>
+      }
+    </section>
+  );
 }
 
 export default Projects;

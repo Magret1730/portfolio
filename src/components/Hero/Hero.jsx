@@ -3,8 +3,23 @@ import PersonalImage from "../../assets/Images/magret.png";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import Icon from "../Icon/ICon";
 
 export default function Hero() {
+    const icons = [
+      {
+        component: <FaGithub />,
+        link: "https://github.com/Magret1730",
+        style: "hero__social fade-in-left",
+        linkStyle: "hero__social-link"
+      },
+      {
+        component: <FaLinkedinIn />,
+        link: "https://www.linkedin.com/in/oyedele-abiodun/",
+        style: "hero__social fade-in-left",
+        linkStyle: "hero__social-link"
+      }
+    ];
 
   return (
     <div className="hero fade-in-left">
@@ -27,22 +42,9 @@ export default function Hero() {
         </div>
 
         <div className="hero__socials fade-in-left">
-          <a
-            href="https://github.com/Magret1730"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero__social fade-in-left"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/oyedele-abiodun/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero__social fade-in-left"
-          >
-            <FaLinkedinIn />
-          </a>
+          {icons.map((icon, index) => (
+            <Icon key={index} {...icon} />
+          ))}
         </div>
       </section>
 

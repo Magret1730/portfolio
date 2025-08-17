@@ -1,6 +1,9 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
 .contact {
-    padding: 4rem 1rem;
-    background: #f9f9f9;
+    @include desktop-spacing;
+    margin-top: 5rem;
 
     &__container {
         max-width: 1200px;
