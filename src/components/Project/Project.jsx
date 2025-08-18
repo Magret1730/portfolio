@@ -19,7 +19,7 @@ const Project = ({project}) => {
   ];
 
   return (
-    <section className="project">
+    <section className="project scale-in">
       <div className="project__image-wrapper">
         <img className="project__image" src={project.image} alt={project.title} />
 

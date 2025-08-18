@@ -164,22 +164,22 @@ export default function Contact() {
     <section className="contact" id="Contact">
       <div className="contact__container">
         <div className="contact__info">
-          <h1 className="contact__title">Get in Touch</h1>
-          <p className="contact__text">
+          <h1 className="contact__title fade-in-left">Get in Touch</h1>
+          <p className="contact__text fade-in-left">
             I’m always open to discussing product design work or partnership opportunities.
           </p>
 
           <div className="contact__details">
-            <p className="contact__details-text contact__details-link">
+            <p className="contact__details-text contact__details-link fade-in-left">
               <IoLocationOutline /> Mount Pearl, NL, Canada
             </p>
             <p className="contact__details-text">
-              <a href="tel:+17092197797" className="contact__details-link contact__details-link--hover">
+              <a href="tel:+17092197797" className="contact__details-link contact__details-link--hover fade-in-left">
                 <FaPhoneAlt /> +1 (709) 219-7797
               </a>
             </p>
             <p className="contact__details-text">
-              <a href="mailto:belloabiodun17@gmail.com" className="contact__details-link contact__details-link--hover">
+              <a href="mailto:belloabiodun17@gmail.com" className="contact__details-link contact__details-link--hover fade-in-left">
                 <MdOutlineEmail />  belloabiodun17@gmail.com
               </a>
             </p>
@@ -192,7 +192,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="contact__form" ref={form} onSubmit={handleSubmit}>
+        <form className="contact__form fade-in-right" ref={form} onSubmit={handleSubmit}>
           <div className="contact__form-group">
             <label className="contact__form-group-label" >Full Name</label>
             <input

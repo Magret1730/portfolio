@@ -66,13 +66,13 @@ const Projects = ({all}) => {
 
   return (
     <section className="projects">
-      <h1 className="projects__header">Featured Projects</h1>
+      <h1 className="projects__header fade-in-up">Featured Projects</h1>
       {!all ?
-        <p className="projects__description">Explore a selection of my work</p>
-        : <p className="projects__description">Browse my portfolio and discover the technologies I use</p>
+        <p className="projects__description fade-in-up stagger-1">Explore a selection of my work</p>
+        : <p className="projects__description fade-in-up stagger-1">Browse my portfolio and discover the technologies I use</p>
       }
 
-      <div className="projects__cards">
+      <div className="projects__cards ">
         {displayedProjects.map((project, index) => (
           <Project key={index} project={project} />
         ))}

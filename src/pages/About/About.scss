@@ -6,11 +6,6 @@
   margin-top: 5rem;
   color: $primary-text-color;
 
-  &__header {
-    @include header;
-    margin: 1rem auto 3rem auto;
-  }
-
   /* Top Section */
   &__top {
     display: flex;

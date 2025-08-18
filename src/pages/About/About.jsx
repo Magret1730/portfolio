@@ -7,17 +7,16 @@ import { Link } from "react-router-dom";
 export default function About() {
   return (
     <section className="about" id="About">
-      {/* <h1 className="about__header">About Me</h1> */}
 
       {/* Top Section */}
       <section className="about__top">
         <div className="about__image">
-          <img src={PersonalImage } alt="Magret's Picture" className="about__img" />
+          <img src={PersonalImage } alt="Magret's Picture" className="about__img scale-in" />
         </div>
 
         <div className="about__intro">
-          <h3 className="about__subheader">Who I am</h3>
-          <div className="about__text">
+          <h3 className="about__subheader fade-in-down">Who I am</h3>
+          <div className="about__text fade-in-right">
             As a Full-Stack Software Developer with a background in Applied Geology and previous
             experience as both a teacher and fashion designer, I bring a unique blend of creativity,
             adaptability, and problem-solving to building efficient, user-friendly web applications.
@@ -25,33 +24,32 @@ export default function About() {
             technology and my drive to create meaningful solutions.
           </div>
 
-          <div className="about__text">
+          <div className="about__text fade-in-right">
             I hold a Software Engineering certification from ALX Africa and completed the Full Stack
             Web Development Bootcamp at BrainStation. I have also advanced my skills through
             specialized training at Keyin College, further strengthening my technical foundation.
           </div>
 
-          <div className="about__text">
+          <div className="about__text fade-in-right">
             Professionally, I am currently working at Vifta Technology Limited as a Junior Software Developer,
             where I contribute to building and maintaining digital solutions that enhance user experience
             and business efficiency. I remain committed to continuous learning, always striving to
             combine creativity with technical expertise to deliver impactful digital products.
           </div>
 
-          <div className="about__text">
+          <div className="about__text fade-in-right">
             Outside of work, I channel my creativity through video editing using tools like CapCut,
             crafting engaging stories and visuals. I am collaborative, adaptable, and open to learning
             new tools and technologies, bringing both technical skills and strong interpersonal qualities
             to every project I work on.
           </div>
 
-          <div className="about__buttons">
-
+          <div className="about__buttons fade-in-down">
             <Link to="/contact">
               <Button
                 name="Get in Touch"
                 style="button__box"
-                className="about__button"
+
               />
             </Link>
             <Button
@@ -75,25 +73,25 @@ export default function About() {
         <div className="about__experience-column">
           <h2 className="about__subheader">Experience</h2>
           <div className="about__exp-item">
-            <h3>Software Developer – Vifta Technology Limited</h3>
-            <p>
+            <h3 className="fade-in-left stagger-1">Software Developer – Vifta Technology Limited</h3>
+            <p className="fade-in-left stagger-1">
               Built and styled 10+ responsive pages using Next.js, MaterialUI and TypeScript,
               ensuring consistent design and accessibility.
             </p>
-            <p>
+            <p className="fade-in-left stagger-1">
               Developed backend features, including file uploads and dynamic email templates,
               with Node.js, TypeScript, and MongoDB.
             </p>
-            <p>
+            <p className="fade-in-left stagger-1">
               Enhanced SEO performance by improving metadata across multiple pages, boosting
               search engine visibility.
             </p>
-            <p>
+            <p className="fade-in-left stagger-1">
               Integrated PostHog analytics across multiple components of the codebase, enabling
               detailed tracking of user interactions and surfacing insights on the dashboard to
               support data-driven decision making.
             </p>
-            <p>
+            <p className="fade-in-left stagger-1">
               Collaborated with cross-functional teams to refine specifications and implement
               full-stack features aligned with business goals.
             </p>
@@ -103,16 +101,16 @@ export default function About() {
         <div className="about__experience-column">
           <h2 className="about__subheader">Education</h2>
           <div className="about__edu-item">
-            <h3>ALX Africa</h3>
-            <p>Software Engineering Certification</p>
+            <h3 className="fade-in-left stagger-1">ALX Africa</h3>
+            <p className="fade-in-left stagger-1">Software Engineering Certification</p>
           </div>
           <div className="about__edu-item">
-            <h3>BrainStation Canada</h3>
-            <p>Diploma, Software Engineering</p>
+            <h3 className="fade-in-left stagger-1">BrainStation Canada</h3>
+            <p className="fade-in-left stagger-1">Diploma, Software Engineering</p>
           </div>
           <div className="about__edu-item">
-            <h3>Keyin College</h3>
-            <p>Diploma, Software Development in view</p>
+            <h3 className="fade-in-left stagger-1">Keyin College</h3>
+            <p className="fade-in-left stagger-1">Diploma, Software Development in view</p>
           </div>
         </div>
       </section>

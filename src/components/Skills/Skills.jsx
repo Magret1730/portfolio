@@ -10,7 +10,7 @@ export default function Skills() {
     ];
 
     return (
-      <section className="skills" id="Skills">
+      <section className="skills scale-in stagger-3" id="Skills" >
         {skills.map((skill, index) => {
           return (
             <Button

@@ -6,8 +6,8 @@ import Skills from "../Skills/Skills";
 const Home_About_Skill = () => {
   return (
     <section className="home-about-skill fade-in-up">
-      <h3 className="home-about-skill__title fade-in-down">About Me</h3>
-      <p className="home-about-skill__description fade-in stagger-1">
+      <h3 className="home-about-skill__title fade-in-up">About Me</h3>
+      <p className="home-about-skill__description fade-in-up stagger-1">
         Here's a bit about my background and what I do.
       </p>
 

@@ -19,7 +19,7 @@ const Footer = () => {
   ];
   return (
     <footer className="footer">
-      <div className="footer__top">
+      <div className="footer__top fade-in-up">
         <div className="footer__brand">
           <h2 className="footer__brand-title">Magret</h2>
           <p className="footer__brand-description">
@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer__contact">
+        <div className="footer__contact fade-in-up stagger-1">
           <h3 className="footer__contact-title">Contact</h3>
           <p className="footer__contact-info">
             <strong>Email:</strong> <a href="mailto:belloabiodun17@gmail.com" className="footer__contact-link">belloabiodun17@gmail.com</a>
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer__bottom">
+      <div className="footer__bottom fade-in-up stagger-1">
         © 2025 Magret. All rights reserved.
       </div>
     </footer>
