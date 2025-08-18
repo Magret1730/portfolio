@@ -1,5 +1,5 @@
-@import "../../styles/partials/mixins";
-@import "../../styles/partials/variables";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .home-contact {
   background-color: $primary-link-text-color;

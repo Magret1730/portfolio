@@ -12,7 +12,7 @@ export default function About() {
       {/* Top Section */}
       <section className="about__top">
         <div className="about__image">
-          <img src={PersonalImage } alt="Magret portrait" className="about__img" />
+          <img src={PersonalImage } alt="Magret's Picture" className="about__img" />
         </div>
 
         <div className="about__intro">
@@ -32,7 +32,7 @@ export default function About() {
           </div>
 
           <div className="about__text">
-            Professionally, I am currently gaining hands-on experience at Vifta Technology Limited,
+            Professionally, I am currently working at Vifta Technology Limited as a Junior Software Developer,
             where I contribute to building and maintaining digital solutions that enhance user experience
             and business efficiency. I remain committed to continuous learning, always striving to
             combine creativity with technical expertise to deliver impactful digital products.
@@ -112,7 +112,7 @@ export default function About() {
           </div>
           <div className="about__edu-item">
             <h3>Keyin College</h3>
-            <p>Diploma, Software Development</p>
+            <p>Diploma, Software Development in view</p>
           </div>
         </div>
       </section>

@@ -49,7 +49,7 @@ export default function Hero() {
       </section>
 
       <div className="hero__images scale-in">
-        <img className="hero__image " src={PersonalImage} alt="Personal Picture" />
+        <img className="hero__image " src={PersonalImage} alt="Magret Picture" />
       </div>
     </div>
   )
