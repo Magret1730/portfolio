@@ -110,7 +110,7 @@ export default function About() {
           </div>
           <div className="about__edu-item">
             <h3 className="fade-in-left stagger-1">Keyin College</h3>
-            <p className="fade-in-left stagger-1">Diploma, Software Development in view</p>
+            <p className="fade-in-left stagger-1">Diploma, Software Development</p>
           </div>
         </div>
       </section>
