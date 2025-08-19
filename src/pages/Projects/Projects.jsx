@@ -1,5 +1,5 @@
 import "./Projects.scss";
-import InstaloanXFrontpage from "../../assets/Images/Instaloanx-frontpage.png";
+import InstaloanXFrontpage from "../../assets/Images/instaloanx-frontpage.png";
 import Instock from "../../assets/Images/instock.png";
 import Bookhive from "../../assets/Images/bookhive.png";
 import TaskifyHub from "../../assets/Images/taskify-hub.png"; 
