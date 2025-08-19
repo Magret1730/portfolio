@@ -3,7 +3,7 @@ import "./Contact.scss";
 import { useState, useRef } from "react";
 import isEmail from 'validator/lib/isEmail';
 import emailjs from "@emailjs/browser";
-import Icon from "../../components/Icon/ICon";
+import Icon from "../../components/Icon/Icon";
 import { FaGithub, FaLinkedinIn, FaPhoneAlt} from 'react-icons/fa';
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
