@@ -7,27 +7,48 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: $supporting-color;
+  background: var(--supporting-color);
+  color: var(--primary-text-color);
   @include desktop-spacing;
 
+  &__theme-light {
+    display: flex;
+  }
+
+  &__theme-dark {
+    display: none;
+  }
+
+  &__hamburger {
+    display: none;
+  }
+
+  &__mobile {
+    display: none;
+  }
 
   &__icon {
-    color: $primary-link-text-color;
+    color: var(--primary-link-text-color);
     font-weight: 400;
     font-size: 2rem;
     letter-spacing: 0.1rem;
     cursor: pointer;
 
     &:hover {
-        transform: translateY(-2px);
-      }
+      transform: translateY(-2px);
+    }
+  }
+
+  &__icon--ham {
+    font-size: 1.5rem;
+    color: var(--primary-link-text-color);
   }
 
   &__logo {
     width: 3rem;
     height: 3rem;
     margin-right: 0.5rem;
-    background-color: transparent
+    background-color: transparent;
   }
 
   &__header {
@@ -37,11 +58,11 @@
   &__links {
     @include flex(row, center, center);
     gap: 3rem;
-    color: $primary-link-text-color;
+    color: var(--primary-link-text-color);
   }
-    
+
   &__link {
-    color: $primary-link-text-color;
+    color: var(--primary-link-text-color);
     font-size: 1.25rem;
     cursor: pointer;
 
@@ -54,7 +75,7 @@
       @include flex(row, center, center);
       position: relative;
       margin-bottom: 0.5rem;
-    
+
       &::after {
         content: "";
         display: block;
@@ -65,13 +86,19 @@
         width: 3.5em;
         height: 4px;
         border-radius: 2px;
-        background-color: $primary-link-text-color;
+        background-color: var(--primary-link-text-color);
       }
     }
   }
+
+  &__navlinks--closed {
+    // border: 1px solid red;
+    @include flex(row, center, center);
+    gap: 2rem;
+  }
 }
 
-/* Tablet (601–900px)  */
+/* Tablet (601–900px) */
 @media (min-width: 601px) and (max-width: 900px) {
   .nav {
     @include tablet-spacing;
@@ -96,30 +123,52 @@
   }
 }
 
-/* Mobile hamburger menu */
-.nav__hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2rem;
-  height: 1.5rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
 
-/* Mobile (≤ 600px)  */
+/* Mobile (≤ 600px) */
 @media (max-width: 600px) {
   .nav {
     @include mobile-spacing;
+
+    &__hamburger {
+      @include flex(row, flex-start, center);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      gap: 1rem;
+      // border: 1px solid red;
+    }
+
+    // &__theme-toggle-dark {
+    //   border: 1px solid red;
+    //   // @include flex(row, center, center);
+    // }
+
+    &__theme-light {
+      display: flex
+    }
+
+    &__theme-dark {
+      display: flex;
+    }
+
+    &__theme-desk {
+      display: none;
+    }
+
+    &__mobile {
+      @include flex(row, center, center);
+      gap: 1rem;
+    }
+
+    // &__icon--sun {
+    //   font-size: 3rem;
+    // }
 
     &__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 2rem;
-      background: $supporting-color;
-      margin-top: 0;
+      background: var(--supporting-color);
       width: 100%;
     }
 
@@ -137,27 +186,41 @@
       display: none;
     }
 
-    &__hamburger {
-      display: flex;
-      font-size: 3.5rem;
-      color: $primary-text-color;
-    }
-
     &__hamburger--open {
-      color: $primary-text-color;
+      color: var(--primary-text-color);
     }
 
     &__links--open {
+      @include mobile-spacing;
       @include flex(column, flex-start, center);
       position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
       width: 100%;
-      background: $supporting-color;
-      padding-top: 1rem;
+      background: var(--supporting-color);
+            // background-color: var(--secondary-primary-link-text-color);
+      // background-color: $secondary-primary-link-text-color;
       gap: 2rem;
       z-index: 999;
     }
+
+    &__navlinks--opened {
+      @include mobile-spacing;
+      @include flex(column, flex-start, center);
+      position: fixed;
+      top: 30%;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: var(--supporting-color);
+      gap: 2.5rem;
+      z-index: 999;
+    }
+
+    // &__navlinks--closed {
+    //   @include flex(row, center, center);
+    //   gap: 2rem;
+    // }
   }
 }

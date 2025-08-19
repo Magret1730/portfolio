@@ -43,7 +43,7 @@ export default function Hero() {
 
         <div className="hero__socials fade-in-left">
           {icons.map((icon, index) => (
-            <Icon key={index} {...icon} />
+            <Icon key={index} {...icon} style={"hero__social"}/>
           ))}
         </div>
       </section>

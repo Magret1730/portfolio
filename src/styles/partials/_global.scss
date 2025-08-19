@@ -2,6 +2,17 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/animations" as *;
+@use "../../styles/partials/theme" as *;
+
+/* Light by default */
+:root {
+  @include inject-theme($theme-light);
+}
+
+/* Dark overrides when .dark is on <html> or any ancestor */
+.dark {
+  @include inject-theme($theme-dark);
+}
 
 *,
 *::before,
@@ -10,7 +21,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
-  background-color: $supporting-color;
+  // background-color: var(--supporting-color);
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -18,6 +34,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: var(--supporting-color);
+  color: var(--primary-text-color);
+  transition: background-color .25s ease, color .25s ease;
 }
 
 a {

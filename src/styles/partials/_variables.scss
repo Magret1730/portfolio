@@ -1,3 +1,4 @@
+// Light theme equivalents
 $primary-link-text-color: #08369a;
 $primary-text-color: #475569;
 $secondary-link-text-color: #1e40af;
@@ -6,3 +7,37 @@ $secondary-text-color: #64748B;
 $supporting-color: #FFFFFF;
 $tertiary-text-color: #0f172a;
 $sub-primary-text-color: #1e293b;
+
+// Dark theme equivalents
+$primary-link-text-color-dark: #60a5fa;
+$primary-text-color-dark: #e2e8f0;
+$secondary-link-text-color-dark: #93c5fd;
+$secondary-primary-link-text-color-dark: #1e3a8a;
+$secondary-text-color-dark: #666c74;
+$supporting-color-dark: #0f172a;
+$tertiary-text-color-dark: #acacac;
+$sub-primary-text-color-dark: #94a3b8;
+
+// Light theme
+$theme-light: (
+  primary-link-text-color: $primary-link-text-color,
+  primary-text-color: $primary-text-color,
+  secondary-link-text-color: $secondary-link-text-color,
+  secondary-primary-link-text-color: $secondary-primary-link-text-color,
+  secondary-text-color: $secondary-text-color,
+  supporting-color: $supporting-color,
+  tertiary-text-color: $tertiary-text-color,
+  sub-primary-text-color: $sub-primary-text-color
+);
+
+// Dark theme
+$theme-dark: (
+  primary-link-text-color: $primary-link-text-color-dark,
+  primary-text-color: $primary-text-color-dark,
+  secondary-link-text-color: $secondary-link-text-color-dark,
+  secondary-primary-link-text-color: $secondary-primary-link-text-color-dark,
+  secondary-text-color: $secondary-text-color-dark,
+  supporting-color: $supporting-color-dark,
+  tertiary-text-color: $tertiary-text-color-dark,
+  sub-primary-text-color: $sub-primary-text-color-dark
+);

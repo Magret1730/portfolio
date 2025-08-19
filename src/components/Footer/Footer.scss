@@ -14,7 +14,7 @@
   &__brand-title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: $tertiary-text-color;
+    color: var(--tertiary-text-color);
     letter-spacing: 0.1rem;
   }
 
@@ -48,7 +48,7 @@
   &__contact-title {
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
-    color: $tertiary-text-color;
+    color: var(--tertiary-text-color);
   }
 
   &__contact-info {
