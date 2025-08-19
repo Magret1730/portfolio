@@ -1,0 +1,172 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.home-about-skill {
+  @include desktop-spacing;
+  margin-top: 3rem;
+  
+  &__title {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--tertiary-text-color);
+    margin-bottom: 0.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 6%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $primary-link-text-color;
+    }
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    color: $secondary-text-color;
+    margin: 2rem auto 3rem auto;
+    text-align: center;
+  }
+
+  &__details-box {
+    @include flex(row, none, flex-start);
+    gap: 4rem;
+  }
+
+  /* About Section */
+  &__details-about {
+    min-width: 350px;
+    max-width: 700px;
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__detail {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $primary-text-color;
+  }
+
+  &__buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__cv-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Skills Section */
+  &__details-skills {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__skills-title {
+    font-size: 1.5rem;
+    color: var(--tertiary-text-color);
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 15%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $primary-link-text-color;
+      }
+  }
+
+  &__skills-skill {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .home-about-skill {
+    @include tablet-spacing;
+
+    &__details-box {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    &__details-about {
+      max-width: 100%;
+    }
+
+    &__skills-title {
+      font-size: 1.35rem;
+    }
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .home-about-skill {
+    @include mobile-spacing;
+    padding: 0.5rem 1rem;
+
+    &__title {
+      font-size: 1.5rem;
+      text-align: center;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20%;
+      }
+    }
+
+    &__description {
+      font-size: 1rem;
+      margin: 1.5rem auto 2rem auto;
+    }
+
+    &__details-about {
+      min-width: 270px;
+      max-width: 400px;
+    }
+
+    &__buttons {
+      @include flex(column, center, center);
+      margin-bottom: 4rem;
+    }
+
+    &__skills-title {
+      text-align: center;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 25%;
+      }
+    }
+
+    &__skills-skill {
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  @include desktop-spacing;
+  @include flex(row, space-between, center);
+
+  &__box {
+    max-width: 500px;
+    flex: 1;
+  }
+
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $secondary-text-color;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subheader {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--tertiary-text-color);
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--sub-primary-text-color);
+    margin-bottom: 1.5rem;
+  }
+
+  &__texts {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: $primary-text-color;
+    margin-bottom: 2rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  &__image {
+    max-width: 550px;
+    min-width: 300px;
+    height: 90vh;
+    border-radius: 1rem;
+    object-fit: cover;
+    }
+}
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+  .hero {
+    @include tablet-spacing;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+
+    &__box {
+      max-width: 100%;
+    }
+
+    &__subheader {
+      font-size: 2rem;
+    }
+
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__texts {
+      font-size: 1rem;
+    }
+
+    &__image {
+      width: 80%;
+      height: auto;
+      max-width: 450px;
+    }
+
+    &__buttons,
+    &__socials {
+      @include flex(row, center, center);
+      gap: 1rem;
+    }
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .hero {
+    @include mobile-spacing;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+
+    &__subheader {
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+
+    &__texts {
+      font-size: 0.95rem;
+    }
+
+    &__buttons {
+      @include flex(column, center, center);
+
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 320px;
+      height: 40vh;
+    }
+  }
+}

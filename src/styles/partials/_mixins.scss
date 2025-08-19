@@ -1,0 +1,42 @@
+@use "./variables" as *;
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin header {
+  @include flex(row, center, center);
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--tertiary-text-color);
+  margin-bottom: 0.5rem;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 3.5em;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $primary-link-text-color;
+  }
+}
+
+@mixin desktop-spacing {
+  padding: 1.5rem 8rem;
+}
+
+@mixin tablet-spacing {
+  padding: 1rem 4rem;
+}
+
+@mixin mobile-spacing {
+  padding: 0.5rem 1rem;
+}

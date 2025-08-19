@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.home {
+  margin-top: 7rem;
+}
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .home {
+    @include tablet-spacing;
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .home {
+    @include mobile-spacing;
+  }
+}

@@ -1,0 +1,36 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.icon {
+  @include flex(row, center, center);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+}
+
+.project__icon-button {
+  background-color: $supporting-color;
+
+  &-link {
+    color: $tertiary-text-color;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.hero__social {
+  color: $primary-link-text-color;
+  background-color: #f0f0f0;
+
+  &-link {
+    color: $tertiary-text-color;
+    background-color: #f0f0f0;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}

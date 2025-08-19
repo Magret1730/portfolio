@@ -1,0 +1,8 @@
+@use "../../styles/partials/mixins" as *;
+
+.skills {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+

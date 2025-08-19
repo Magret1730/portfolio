@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" role="img" aria-label="AMO code icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#08369a"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="92" ry="92" fill="url(#bg)"/>
+  <g fill="#FFFFFF" font-family="Quicksand, Arial, sans-serif" font-weight="700" font-size="180" text-anchor="middle">
+    <text x="256" y="292">&lt;AMO/&gt;</text>
+  </g>
+</svg>

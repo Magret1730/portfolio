@@ -1,0 +1,76 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.projects {
+    @include desktop-spacing;
+    margin: 7rem auto 7rem auto;
+    
+    &__header {
+      @include header;
+      margin-bottom: 2rem;
+    }
+
+    &__description {
+      font-size: 1.25rem;
+      color: $secondary-text-color;
+      margin: 2rem auto 3rem auto;
+      text-align: center;
+      margin: 2rem auto 6rem auto;
+    }
+
+    &__cards {
+      @include flex(row, space-between, center);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    &__button {
+      @include flex(row, center, center);
+      margin: 2rem auto;
+    }
+}
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .projects {
+    @include tablet-spacing;
+
+    &__description {
+      font-size: 1.1rem;
+      margin: 1.5rem auto 4rem auto;
+    }
+
+    &__cards {
+      justify-content: center;
+      gap: 1.5rem;
+    }
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .projects {
+    @include mobile-spacing;
+
+    &__header {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    &__description {
+      font-size: 1rem;
+      margin: 1rem auto 2rem auto;
+      padding: 0 1rem;
+    }
+
+    &__cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &__button {
+      margin-top: 2rem;
+    }
+  }
+}

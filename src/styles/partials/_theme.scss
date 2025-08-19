@@ -1,0 +1,8 @@
+@use "./variables" as *;
+
+// Turns map entries into CSS custom properties (e.g., --primary-text-color)
+@mixin inject-theme($theme-map) {
+  @each $key, $value in $theme-map {
+    --#{$key}: #{$value};
+  }
+}

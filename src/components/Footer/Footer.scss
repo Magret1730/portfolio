@@ -1,0 +1,124 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  @include desktop-spacing;
+  color: $primary-text-color;
+
+  &__top {
+    @include flex(row, space-between, center);
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__brand-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--tertiary-text-color);
+    letter-spacing: 0.1rem;
+  }
+
+  &__brand-description {
+    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__social-link {
+    @include flex(row, center, center);
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #1e1e1e;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__contact-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--tertiary-text-color);
+  }
+
+  &__contact-info {
+    margin-bottom: 0.5rem;
+  }
+
+  &__contact-link {
+    color: $primary-text-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__bottom {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #777;
+  }
+}
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .footer {
+    @include tablet-spacing;
+    width: 100%;
+    min-height: auto;
+
+    &__image-wrapper {
+      height: 220px;
+    }
+
+    &__content {
+      padding: 1.25rem;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+  /* Mobile (≤600px) */
+  @media (max-width: 600px) {
+    .footer {
+      @include mobile-spacing;
+      margin-top: 2rem;
+
+    &__image-wrapper {
+      height: 180px;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    &__description {
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    &__skills {
+      justify-content: left;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@use "../../styles/partials/variables" as *;
+
+.button {
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &__nav-box {
+      padding: 1rem 1rem;
+      background-color: $primary-link-text-color;
+      border: none;
+      color: $supporting-color;
+    
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+    
+    
+    &__box {
+      padding: 0.6rem 1rem;
+      background-color: $primary-link-text-color;
+      border: none;
+      // border: 2px solid $primary-link-text-color;
+      color: $supporting-color;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+
+    &__home-contact {
+      padding: 0.6rem 1rem;
+      color: $primary-link-text-color;
+      border: none;
+      background-color: $supporting-color;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+
+    &__boxed {
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      border: 2px solid $primary-link-text-color;
+      color: $primary-link-text-color;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+
+    &__skills {
+      padding: 0.4rem 0.9rem;
+      background-color: transparent;
+      border: 1px solid $primary-link-text-color;
+      color: $primary-link-text-color;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $primary-link-text-color;
+        color: $supporting-color;
+        transform: translateY(-2px);
+      }
+
+  }
+
+  /* Tablet (≤900px) */
+  @media (max-width: 900px) {
+    font-size: 1.1rem;
+
+    &__nav-box,
+    &__box,
+    &__home-contact,
+    &__boxed,
+    &__skills {
+      padding: 0.5rem 0.9rem;
+    }
+  }
+
+  /* Mobile (≤600px) */
+  @media (max-width: 600px) {
+    font-size: 1rem;
+
+    &__nav-box,
+    &__box,
+    &__home-contact,
+    &__boxed,
+    &__skills {
+      padding: 0.45rem 0.8rem;
+      font-size: 0.95rem;
+    }
+  }
+}
