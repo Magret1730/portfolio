@@ -8,7 +8,7 @@ import { FaGithub, FaLinkedinIn, FaPhoneAlt} from 'react-icons/fa';
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 
-export default function Contact() {
+export default function Contact({isDark}) {
   const form = useRef();
 
   const [ name, setName ] = useState("");
@@ -194,9 +194,9 @@ export default function Contact() {
 
         <form className="contact__form fade-in-right" ref={form} onSubmit={handleSubmit}>
           <div className="contact__form-group">
-            <label className="contact__form-group-label" >Full Name</label>
+            <label className={`contact__form-group-label ${isDark ? 'contact__form-group-label--dark' : ''}`} >Full Name</label>
             <input
-              className="contact__form-group-input"
+              className={`contact__form-group-input ${isDark ? 'contact__form-group-input--dark' : ''}`}
               name="name"
               type="text"
               placeholder="John Doe"
@@ -206,9 +206,9 @@ export default function Contact() {
           </div>
 
           <div className="contact__form-group">
-            <label className="contact__form-group-label" >Email</label>
+            <label className={`contact__form-group-label ${isDark ? 'contact__form-group-label--dark' : ''}`} >Email</label>
             <input
-              className="contact__form-group-input"
+              className={`contact__form-group-input ${isDark ? 'contact__form-group-input--dark' : ''}`}
               name="email"
               type="email"
               placeholder="you@example.com"
@@ -218,9 +218,9 @@ export default function Contact() {
           </div>
 
           <div className="contact__form-group">
-            <label className="contact__form-group-label" >Subject</label>
+            <label className={`contact__form-group-label ${isDark ? 'contact__form-group-label--dark' : ''}`} >Subject</label>
             <input
-              className="contact__form-group-input"
+              className={`contact__form-group-input ${isDark ? 'contact__form-group-input--dark' : ''}`}
               name="subject"
               type="text"
               placeholder="Let's build something amazing"
@@ -230,9 +230,9 @@ export default function Contact() {
           </div>
 
           <div className="contact__form-group">
-            <label className="contact__form-group-label" >Message</label>
+            <label className={`contact__form-group-label ${isDark ? 'contact__form-group-label--dark' : ''}`} >Message</label>
             <textarea
-              className="contact__form-group-textarea"
+              className={`contact__form-group-textarea ${isDark ? 'contact__form-group-textarea--dark' : ''}`}
               name="message"
               placeholder="Type your message here..."
               value={message}

@@ -14,7 +14,7 @@ export default function Nav({ isDark, toggleTheme }) {
   return (
     <section className="nav">
       <NavLink className="nav__icon" to="/" onClick={handleLinkClick}>
-        <img src="/logo64.svg" alt="Magret's Logo" className="nav__logo" />
+        {/* <img src="/logo64.svg" alt="Magret's Logo" className="nav__logo" /> */}
         Magret
       </NavLink>
 
