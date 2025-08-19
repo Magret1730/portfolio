@@ -2,7 +2,7 @@ import "./Project.scss";
 import Icon from "../Icon/ICon";
 import { FaGithub, FaLink } from "react-icons/fa";
 
-const Project = ({project}) => {
+const Project = ({project, isDark}) => {
   const icons = [
     {
       component: <FaLink />,
@@ -20,7 +20,7 @@ const Project = ({project}) => {
 
   return (
     <section className="project scale-in">
-      <div className="project__image-wrapper">
+      <div className={`project__image-wrapper ${isDark ? "project__image--dark" : ""}`}>
         <img className="project__image" src={project.image} alt={project.title} />
 
         <div className="project__overlay">
@@ -35,7 +35,7 @@ const Project = ({project}) => {
         <p className="project__description">{project.description}</p>
         <div className="project__skills">
           {project.skills.split(", ").map((skill, idx) => (
-            <span key={idx} className="project__skill-badge">
+            <span key={idx} className={`project__skill-badge ${isDark ? "project__skill-badge--dark" : ""}`}>
               {skill}
             </span>
           ))}

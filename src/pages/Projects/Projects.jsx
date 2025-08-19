@@ -9,7 +9,7 @@ import Project from "../../components/Project/Project";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 
-const Projects = ({all}) => {
+const Projects = ({all, isDark}) => {
   const projectData = [
     {
       image: InstaloanXFrontpage,
@@ -39,7 +39,7 @@ const Projects = ({all}) => {
       image: TaskifyHub,
       title: "TaskifyHub",
       description: "A task management app that helps users organize, prioritize, and track tasks with responsive design and authentication.",
-      skills: "Flask, Flask-Login, Flask-Bycrypt, Flask-Mail, Flask-SQLAlchemy, SQLite, itsdangerous",
+      skills: "Flask, Flask-Login, Flask-SQLAlchemy, SQLite, itsdangerous",
       liveLink: "https://taskifyhub.pythonanywhere.com/",
       githubLink: "https://github.com/Magret1730/taskify-hub-portfolio-project"
     },
@@ -74,7 +74,7 @@ const Projects = ({all}) => {
 
       <div className="projects__cards ">
         {displayedProjects.map((project, index) => (
-          <Project key={index} project={project} />
+          <Project key={index} project={project} isDark={isDark} />
         ))}
       </div>
 
