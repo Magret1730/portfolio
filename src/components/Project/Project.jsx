@@ -1,5 +1,5 @@
 import "./Project.scss";
-import Icon from "../Icon/ICon";
+import Icon from "../Icon/Icon";
 import { FaGithub, FaLink } from "react-icons/fa";
 
 const Project = ({project, isDark}) => {

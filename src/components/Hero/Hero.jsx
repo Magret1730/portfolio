@@ -3,7 +3,7 @@ import PersonalImage from "../../assets/Images/magret.png";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import Icon from "../Icon/ICon";
+import Icon from "../Icon/Icon";
 
 export default function Hero() {
   const icons = [
