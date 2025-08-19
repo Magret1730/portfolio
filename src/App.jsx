@@ -11,21 +11,18 @@ import "./styles/partials/_global.scss";
 import Footer from './components/Footer/Footer';
 import { useState, useEffect } from 'react';
 
+const saved = localStorage.getItem("theme");
+if (saved === "dark") {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark"); // ensures light theme on first visit
+}
+
 function App() {
-  // const [isDark, setIsDark] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    // optional: read saved preference or system preference
-    const saved = localStorage.getItem("theme");
-    if (saved) return saved === "dark";
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  // Initialize from localStorage (or default to false/light)
+  const [isDark, setIsDark] = useState(() => localStorage.getItem("theme") === "dark");
 
   const toggleTheme = () => setIsDark(d => !d);
-
-
-  // const toggleTheme = () => {
-  //   setIsDark(!isDark);
-  // };
 
   const showToast = (type, message) => {
     if (type === "success") {
@@ -53,20 +50,6 @@ function App() {
     document.documentElement.classList.toggle("dark", isDark);
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
-
-  // useEffect(() => {
-  //   document.body.className = isDark ? "dark" : "light";
-  //   console.log("Body class:", document.body.className);
-  // }, [isDark]);
-//   useEffect(() => {
-//   if (isDark) {
-//     document.body.classList.add("dark");
-//     document.body.classList.remove("light");
-//   } else {
-//     document.body.classList.add("light");
-//     document.body.classList.remove("dark");
-//   }
-// }, [isDark]);
 
   return (
     <section className='app'>
