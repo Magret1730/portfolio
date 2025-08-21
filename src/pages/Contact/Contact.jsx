@@ -166,7 +166,7 @@ export default function Contact({isDark}) {
         <div className="contact__info">
           <h1 className="contact__title fade-in-left">Get in Touch</h1>
           <p className="contact__text fade-in-left">
-            I’m always open to discussing product design work or partnership opportunities.
+            I’m always open to discussing software development projects, collaborations, or freelance opportunities.
           </p>
 
           <div className="contact__details">
