@@ -49,3 +49,12 @@ If you’d like to connect or collaborate:
 5. Deploy it
 6. Posthog to monitor activities
 -->
+
+<!-- 
+To make chnages
+1. Make chnages on develop branch
+2. Create PR request on develop branch 
+3. Merge PR request to main
+4. Redeploy on netlify
+5. On vscode, checkout to main... pull... checkout to develop... rebase main
+ -->
