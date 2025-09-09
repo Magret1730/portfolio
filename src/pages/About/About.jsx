@@ -123,6 +123,12 @@ export default function About() {
                 Credential ID: <span>2b53579d816a4e45a097febfd7ae019f</span>
               </p>
             </div>
+            <div className="about__cert-item">
+              <h3 className="fade-in-left stagger-1">ICTC WIL – Cloud Computing</h3>
+              <p className="fade-in-left stagger-1">
+                ICTC Canada — Issued <span>Aug 2025</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
