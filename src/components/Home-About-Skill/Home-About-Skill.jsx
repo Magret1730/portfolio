@@ -23,9 +23,10 @@ const Home_About_Skill = () => {
               technology and my drive to create meaningful solutions.
             </p>
             <p className="home-about-skill__detail fade-in-left stagger-2">
-              I hold a Software Engineering certification from ALX Africa and completed the Full Stack
-              Web Development Bootcamp at BrainStation. I have also advanced my skills through
-              specialized training at Keyin College, further strengthening my technical foundation.
+              I hold a Software Engineering certification from ALX Africa, completed the Full Stack
+              Web Development Bootcamp at BrainStation, and earned the AWS Cloud Practitioner
+              Certification. I have also advanced my skills through specialized training at
+              Keyin College, further strengthening my technical foundation.
             </p>
             <p className="home-about-skill__detail fade-in-left stagger-2">
               Professionally, I am currently working at Vifta Technology Limited as a Junior Software Developer,

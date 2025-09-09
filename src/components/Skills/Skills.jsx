@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 export default function Skills() {
     const skills = [
       "React.js", "HTML", "CSS", "Bootstrap", "Node.js", "Express.js", "Flask", "Sequelize",
-      "Next.js", "Typescript", "Sass", "Knex.js", "MongoDB",
+      "Next.js", "Typescript", "Sass", "Knex.js", "MongoDB", "AWS",
       "PostgreSQL", "MySQL", "JavaScript", "Python", "Git", "GitHub", "VSCode", "Postman", "Jira",
       "Adaptability", "Collaboration", "Creativity", "Continuous Learning", "Communication",
     ];

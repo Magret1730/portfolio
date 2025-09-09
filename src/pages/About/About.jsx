@@ -98,19 +98,37 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about__experience-column">
-          <h2 className="about__subheader">Education</h2>
-          <div className="about__edu-item">
-            <h3 className="fade-in-left stagger-1">ALX Africa</h3>
-            <p className="fade-in-left stagger-1">Software Engineering Certification</p>
+        <div className="about__experience-divider">
+          <div className="about__experience-column">
+            <h2 className="about__subheader">Education</h2>
+            <div className="about__edu-item">
+              <h3 className="fade-in-left stagger-1">ALX Africa</h3>
+              <p className="fade-in-left stagger-1">Software Engineering Certification</p>
+            </div>
+            <div className="about__edu-item">
+              <h3 className="fade-in-left stagger-1">BrainStation Canada</h3>
+              <p className="fade-in-left stagger-1">Diploma, Software Engineering</p>
+            </div>
+            <div className="about__edu-item">
+              <h3 className="fade-in-left stagger-1">Keyin College</h3>
+              <p className="fade-in-left stagger-1">Diploma, Software Development</p>
+            </div>
           </div>
-          <div className="about__edu-item">
-            <h3 className="fade-in-left stagger-1">BrainStation Canada</h3>
-            <p className="fade-in-left stagger-1">Diploma, Software Engineering</p>
-          </div>
-          <div className="about__edu-item">
-            <h3 className="fade-in-left stagger-1">Keyin College</h3>
-            <p className="fade-in-left stagger-1">Diploma, Software Development</p>
+
+          <div className="about__experience-certifications">
+            <h2 className="about__subheader">Certifications</h2>
+            <div className="about__cert-item">
+              <h3 className="fade-in-left stagger-1">AWS Cloud Practitioner</h3>
+              <p className="fade-in-left stagger-1">
+                Credential ID: <span>2b53579d816a4e45a097febfd7ae019f</span>
+              </p>
+            </div>
+            <div className="about__cert-item">
+              <h3 className="fade-in-left stagger-1">ICTC WIL – Cloud Computing</h3>
+              <p className="fade-in-left stagger-1">
+                ICTC Canada — Issued <span>Aug 2025</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
