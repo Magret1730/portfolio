@@ -7,6 +7,8 @@ import Icon from "../../components/Icon/Icon";
 import { FaGithub, FaLinkedinIn, FaPhoneAlt} from 'react-icons/fa';
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
+import posthog from "posthog-js";
+import { useEffect } from "react";
 
 export default function Contact({isDark}) {
   const form = useRef();
@@ -15,6 +17,12 @@ export default function Contact({isDark}) {
   const [ email, setEmail ] = useState("");
   const [ subject, setSubject ] = useState("");
   const [ message, setMessage ] = useState("");
+
+  useEffect(() => {
+    posthog.capture('contact_page_viewed', {
+      page: window.location.pathname,
+    });
+  }, []);
 
   // Function handles name change in state variable
   const handleChangeName = (event) => {
@@ -187,7 +195,16 @@ export default function Contact({isDark}) {
 
           <div className="contact__links fade-in-left">
             {icons.map((icon, index) => (
-              <Icon key={index} {...icon} />
+              <Icon
+                key={index}
+                {...icon}
+                onClick={() => {
+                  posthog.capture('contact_icon_clicked', {
+                    icon_name: icon.component.type.displayName || icon.component.type.name,
+                    location: 'contact_section',
+                  });
+                }}
+              />
             ))}
           </div>
         </div>
@@ -202,6 +219,12 @@ export default function Contact({isDark}) {
               placeholder="John Doe"
               value={name}
               onChange={handleChangeName}
+              onClick={() => {
+                posthog.capture('form_field_clicked', {
+                  field_name: 'Full Name',
+                  location: 'contact_section',
+                });
+              }}
             />
           </div>
 
@@ -214,6 +237,12 @@ export default function Contact({isDark}) {
               placeholder="you@example.com"
               value={email}
               onChange={handleChangeEmail}
+              onClick={() => {
+                posthog.capture('form_field_clicked', {
+                  field_name: 'Email',
+                  location: 'contact_section',
+                });
+              }}
             />
           </div>
 
@@ -226,6 +255,12 @@ export default function Contact({isDark}) {
               placeholder="Let's build something amazing"
               value={subject}
               onChange={handleChangeSubject}
+              onClick={() => {
+                posthog.capture('form_field_clicked', {
+                  field_name: 'Subject',
+                  location: 'contact_section',
+                });
+              }}
             />
           </div>
 
@@ -237,10 +272,27 @@ export default function Contact({isDark}) {
               placeholder="Type your message here..."
               value={message}
               onChange={handleChangeMessage}
+              onClick={() => {
+                posthog.capture('form_field_clicked', {
+                  field_name: 'Message',
+                  location: 'contact_section',
+                });
+              }}
             />
           </div>
 
-          <button type="submit" className="contact__submit">Get in touch</button>
+          <button
+            type="submit"
+            className="contact__submit"
+            onClick={() => {
+              posthog.capture('form_botton_clicked', {
+                button_name: 'Get in touch',
+                location: 'contact_section',
+              });
+            }}
+          >
+            Get in touch
+          </button>
         </form>
       </div>
     </section>

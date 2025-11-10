@@ -1,8 +1,16 @@
 import "./Project.scss";
 import Icon from "../Icon/Icon";
 import { FaGithub, FaLink } from "react-icons/fa";
+import posthog from "posthog-js";
+import { useEffect } from "react";
 
 const Project = ({project, isDark}) => {
+  useEffect(() => {
+    posthog.capture('project_page_viewed', {
+      page: window.location.pathname,
+    });
+  }, []);
+
   const icons = [
     {
       component: <FaLink />,
@@ -25,7 +33,13 @@ const Project = ({project, isDark}) => {
 
         <div className="project__overlay">
           {icons.map((icon, index) => (
-            <Icon key={index} {...icon} />
+            <Icon key={index} {...icon} onClick={() => {
+              posthog.capture('project_icon_clicked', {
+                icon_type: icon.component.type.displayName || icon.component.type.name,
+                project_title: project.title,
+                page: window.location.pathname,
+              });
+            }} />
           ))}
         </div>
       </div>
