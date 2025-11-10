@@ -3,8 +3,33 @@ import Button from "../../components/Button/Button";
 import PersonalImage from "../../assets/Images/magret.png";
 import Skills from "../../components/Skills/Skills";
 import { Link } from "react-router-dom";
+import posthog from "posthog-js";
+import { useEffect } from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import Icon from "../../components/Icon/Icon";
 
 export default function About() {
+  useEffect(() => {
+    posthog.capture('about_page_viewed', {
+      page: window.location.pathname,
+    });
+  }, []);
+
+  const icons = [
+    {
+      component: <FaGithub />,
+      link: "https://github.com/Magret1730",
+      style: "hero__social fade-in-left",
+      linkStyle: "hero__social-link"
+    },
+    {
+      component: <FaLinkedinIn />,
+      link: "https://www.linkedin.com/in/oyedele-abiodun/",
+      style: "hero__social fade-in-left",
+      linkStyle: "hero__social-link"
+    }
+  ];
+
   return (
     <section className="about" id="About">
 
@@ -49,7 +74,12 @@ export default function About() {
               <Button
                 name="Get in Touch"
                 style="button__box"
-
+                onClick={() => {
+                  posthog.capture('cta_clicked', {
+                    location: 'about_section',
+                    button_name: 'Get in Touch',
+                  })
+                }}
               />
             </Link>
             <Button
@@ -57,7 +87,27 @@ export default function About() {
               style="button__boxed"
               href="/Abiodun_Magret_Oyedele_Resume.pdf"
               download="Abiodun_Magret_Oyedele_Resume.pdf"
+              onClick={() => {
+                posthog.capture('cta_clicked', {
+                  location: 'about_section',
+                  button_name: 'Download CV',
+                })
+              }}
             />
+          </div>
+          <div className="about__links fade-in-left">
+            {icons.map((icon, index) => (
+              <Icon
+                key={index}
+                {...icon}
+                onClick={() => {
+                  posthog.capture('about_icon_clicked', {
+                    icon_name: icon.component.type.displayName || icon.component.type.name,
+                    location: 'about_section',
+                  });
+                }}
+              />
+            ))}
           </div>
         </div>
       </section>

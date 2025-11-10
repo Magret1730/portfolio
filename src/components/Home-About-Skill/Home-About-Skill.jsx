@@ -2,8 +2,16 @@ import "./Home-About-Skill.scss";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import Skills from "../Skills/Skills";
+import posthog from "posthog-js";
+import { useEffect } from "react";
 
 const Home_About_Skill = () => {
+  useEffect(() => {
+    posthog.capture('home_about_skill_section_viewed', {
+      page: window.location.pathname,
+    });
+  }, []);
+
   return (
     <section className="home-about-skill fade-in-up">
       <h3 className="home-about-skill__title fade-in-up">About Me</h3>
@@ -48,6 +56,12 @@ const Home_About_Skill = () => {
                 className="fade-in-left stagger-3"
                 name="More About Me"
                 style="button__box"
+                onClick={() => {
+                  posthog.capture('cta_clicked', {
+                    location: 'home_about_skill_section',
+                    button_name: 'More About Me',
+                  })
+                }}
               />
             </Link>
             <Button
@@ -56,6 +70,12 @@ const Home_About_Skill = () => {
               href="/Abiodun_Magret_Oyedele_Resume.pdf"
               download="Abiodun_Magret_Oyedele_Resume.pdf"
               className="fade-in-left stagger-3"
+              onClick={() => {
+                posthog.capture('cta_clicked', {
+                  location: 'home_about_skill_section',
+                  button_name: 'Download CV',
+                })
+              }}
             />
           </div>
         </div>

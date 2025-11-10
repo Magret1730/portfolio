@@ -9,7 +9,16 @@ const HomeContact = ({isDark}) => {
       <p className={`home-contact__description fade-in-up stagger-1 ${isDark ? 'home-contact__description--dark' : ''}`}>If you have any questions or inquiries, feel free to reach out!</p>
 
       <Link to="/contact">
-        <Button name="Get in Touch" style="button__home-contact"/>
+        <Button
+          name="Get in Touch"
+          style="button__home-contact"
+          onClick={() => {
+            posthog.capture('cta_clicked', {
+              location: 'home_contact_section',
+              button_name: 'Get in Touch',
+            })
+          }}
+        />
       </Link>
     </div>
   )

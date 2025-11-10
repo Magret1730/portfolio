@@ -38,6 +38,12 @@
     gap: 1rem;
   }
 
+  &__links {
+    margin-top: 1.5rem;
+    @include flex(row, flex-start, center);
+    gap: 1rem;
+  }
+
   /* Skills */
   &__skills {
     margin-bottom: 4rem;

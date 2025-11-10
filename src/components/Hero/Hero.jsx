@@ -4,8 +4,16 @@ import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import Icon from "../Icon/Icon";
+import posthog from "posthog-js";
+import { useEffect } from "react";
 
 export default function Hero() {
+  useEffect(() => { // How many visitors reached the hero section
+    posthog.capture('hero_section_viewed', {
+      page: window.location.pathname,
+    });
+  }, []);
+
   const icons = [
     {
       component: <FaGithub />,
@@ -34,16 +42,41 @@ export default function Hero() {
 
         <div className="hero__buttons fade-in-left">
           <Link to="/contact">
-            <Button name="Get in Touch" style="button__box" />
+            <Button
+              name="Get in Touch"
+              style="button__box"
+              onClick={() => {
+                posthog.capture('cta_clicked', {
+                  location: 'hero_section',
+                  button_name: 'Get in Touch',
+                })
+              }}
+            />
           </Link>
           <Link to="/projects">
-            <Button name="View my Work" style="button__boxed" />
+            <Button
+              name="View my Work"
+              style="button__boxed"
+              onClick={() => {
+                posthog.capture('cta_clicked', {
+                  location: 'hero_section',
+                  button_name: 'View my Work',
+                })
+              }}
+              />
           </Link>
         </div>
 
         <div className="hero__socials fade-in-left">
           {icons.map((icon, index) => (
-            <Icon key={index} {...icon} style={"hero__social"}/>
+            <Icon key={index} {...icon} style={"hero__social"}
+              onClick={() => {
+                posthog.capture('hero_icon_clicked', {
+                  icon_name: icon.component.type.displayName || icon.component.type.name,
+                  location: 'hero_section',
+                });
+              }}
+            />
           ))}
         </div>
       </section>

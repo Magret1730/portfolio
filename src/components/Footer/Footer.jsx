@@ -1,8 +1,16 @@
-import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import "./Footer.scss";
 import Icon from "../Icon/Icon";
+import posthog from "posthog-js";
+import { useEffect } from "react";
 
 const Footer = () => {
+  useEffect(() => {
+    posthog.capture('footer_viewed', {
+      page: window.location.pathname,
+    });
+  }, []);
+
   const icons = [
     {
       component: <FaGithub />,
@@ -27,7 +35,14 @@ const Footer = () => {
           </p>
           <div className="footer__socials">
             {icons.map((icon, index) => (
-              <Icon key={index} {...icon} />
+              <Icon key={index} {...icon}
+                onClick={() => {
+                  posthog.capture('social_icon_clicked', {
+                    icon_name: icon.component.type.displayName || icon.component.type.name,
+                    location: 'footer_section',
+                  });
+                }}
+              />
             ))}
           </div>
         </div>

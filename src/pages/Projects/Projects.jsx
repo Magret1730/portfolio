@@ -8,8 +8,16 @@ import HarryPotter from "../../assets/Images/harry-potter.png";
 import Project from "../../components/Project/Project";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
+import posthog from "posthog-js";
+import { useEffect } from "react";
 
 const Projects = ({all, isDark}) => {
+  useEffect(() => {
+    posthog.capture('projects_section_viewed', {
+      page: window.location.pathname,
+    });
+  }, []);
+
   const projectData = [
     {
       image: InstaloanXFrontpage,
@@ -80,7 +88,16 @@ const Projects = ({all, isDark}) => {
 
       { all === false &&
         <Link to="/projects" className="projects__button">
-          <Button name="View All Projects" style="button__box" />
+          <Button
+            name="View All Projects"
+            style="button__box"
+            onClick={() => {
+              posthog.capture('cta_clicked', {
+                location: 'projects_section',
+                button_name: 'View All Projects',
+              })
+            }}
+          />
         </Link>
       }
     </section>
