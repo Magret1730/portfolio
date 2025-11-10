@@ -1,6 +1,7 @@
 import "./About.scss";
 import Button from "../../components/Button/Button";
 import PersonalImage from "../../assets/Images/magret.png";
+import PersonalImage2 from "../../assets/Images/magret3.png";
 import Skills from "../../components/Skills/Skills";
 import { Link } from "react-router-dom";
 import posthog from "posthog-js";
@@ -36,7 +37,7 @@ export default function About() {
       {/* Top Section */}
       <section className="about__top">
         <div className="about__image">
-          <img src={PersonalImage } alt="Magret's Picture" className="about__img scale-in" />
+          <img src={PersonalImage2} alt="Magret's Picture" className="about__img scale-in" />
         </div>
 
         <div className="about__intro">
@@ -64,9 +65,24 @@ export default function About() {
 
           <div className="about__text fade-in-right">
             Outside of work, I channel my creativity through video editing using tools like CapCut,
-            crafting engaging stories and visuals. I am collaborative, adaptable, and open to learning
-            new tools and technologies, bringing both technical skills and strong interpersonal qualities
-            to every project I work on.
+            Adobe Premiere Pro, crafting engaging stories and visuals. I am collaborative, adaptable, and
+            open to learning new tools and technologies, bringing both technical skills and strong
+            interpersonal qualities to every project I work on.
+          </div>
+
+          <div className="about__links fade-in-left">
+            {icons.map((icon, index) => (
+              <Icon
+                key={index}
+                {...icon}
+                onClick={() => {
+                  posthog.capture('about_icon_clicked', {
+                    icon_name: icon.component.type.displayName || icon.component.type.name,
+                    location: 'about_section',
+                  });
+                }}
+              />
+            ))}
           </div>
 
           <div className="about__buttons fade-in-down">
@@ -94,20 +110,6 @@ export default function About() {
                 })
               }}
             />
-          </div>
-          <div className="about__links fade-in-left">
-            {icons.map((icon, index) => (
-              <Icon
-                key={index}
-                {...icon}
-                onClick={() => {
-                  posthog.capture('about_icon_clicked', {
-                    icon_name: icon.component.type.displayName || icon.component.type.name,
-                    location: 'about_section',
-                  });
-                }}
-              />
-            ))}
           </div>
         </div>
       </section>

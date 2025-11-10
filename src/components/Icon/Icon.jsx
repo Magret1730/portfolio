@@ -25,7 +25,7 @@ const Icon = ({link, component, style, linkStyle, icon_name}) => {
         className={linkStyle}
         onClick={handleClick}
       >
-        {component} {'good'}
+        {component}
       </a>
     </div>
   )
