@@ -18,11 +18,11 @@ It showcases my skills, projects, and professional background as a Software Deve
 ## Tech Stack
 - **Frontend:** React, React Router, SCSS
 - **Icons:** React Icons
-- **Deployment:** (Vercel or Netlify )
+- **Deployment:** (Netlify)
 
 ## 🔧 Setup & Installation
 1. Clone the repository 
-`git clone https://github.com/yourusername/portfolio.git`
+`git clone https://github.com/Magret1730/portfolio.git`
 2. Navigate into the project
 `cd portfolio`
 3. Install dependencies
