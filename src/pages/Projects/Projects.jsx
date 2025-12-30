@@ -5,6 +5,8 @@ import Bookhive from "../../assets/Images/bookhive.png";
 import TaskifyHub from "../../assets/Images/taskify-hub.png"; 
 import SeamLess from "../../assets/Images/seamless.png";
 import HarryPotter from "../../assets/Images/harry-potter.png";
+import DaRefinersFire from "../../assets/Images/drfWebsite.png";
+import JavaGymManagementSystem from "../../assets/Images/JavaGymManagement.jpeg";
 import Project from "../../components/Project/Project";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
@@ -19,6 +21,22 @@ const Projects = ({all, isDark}) => {
   }, []);
 
   const projectData = [
+    {
+      image: DaRefinersFire,
+      title: "Da Refiner's Fire",
+      description: "Da Refiner's Fire (DRF) is a ministry-focused website designed to share spirit-filled short videos.",
+      skills: "React, MUI, Next.js, Typescript, Tailwindcss, Posthog, EmailJS",
+      liveLink: "https:darefinersfire.org",
+      githubLink: "https://github.com/Magret1730/darefinersfire"
+    },
+    {
+      image: JavaGymManagementSystem,
+      title: "Gym Management System",
+      description: "The Gym Management System is a console-based application with role-based access for Admins, Trainers, and Members.",
+      skills: "Java, PostgreSQL, Javadocs, Collaboration",
+      liveLink: "https://youtu.be/Ut9ake7GVQg",
+      githubLink: "https://github.com/CactusTournament/JavaFinalWinter2025"
+    },
     {
       image: InstaloanXFrontpage,
       title: "InstaloanX",
