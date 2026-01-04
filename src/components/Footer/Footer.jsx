@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__bottom fade-in-up stagger-1">
-        &copy; {new Date().getFullYear()} Magret. All rights reserved.
+        &copy; {new Date().getFullYear()} Abiodun Magret Oyedele. All rights reserved.
       </div>
     </footer>
   );
