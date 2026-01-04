@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__bottom fade-in-up stagger-1">
-        © 2025 Magret. All rights reserved.
+        &copy; {new Date().getFullYear()} Magret. All rights reserved.
       </div>
     </footer>
   );
