@@ -1,0 +1,86 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.experience {
+  @include desktop-spacing;
+  color: $primary-text-color;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  &__subheader {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 3rem 0 1.5rem;
+    border-left: 4px solid $primary-link-text-color;
+    padding-left: 0.75rem;
+    color: $primary-text-color;
+  }
+
+  /* Experience & Education */
+  &__column {
+      &>.experience__exp-items {
+      
+        &>.experience__exp-item {
+          margin-bottom: 4rem;
+        }
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        color: $primary-text-color;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+  }
+
+  &__volunteer-item {
+    margin-bottom: 4rem;
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: $primary-text-color;
+    }
+  }
+}
+
+/* 📲 Tablet (≤900px) */
+@media (max-width: 900px) {
+  .experience {
+    @include tablet-spacing;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    &__subheader {
+      font-size: 1.75rem;
+      margin: 2rem 0 1rem;
+    }
+  }
+}
+
+/* 📱 Mobile (≤600px) */
+@media (max-width: 600px) {
+  .experience {
+    @include mobile-spacing;
+
+    &__subheader {
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      text-align: center;
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+}
