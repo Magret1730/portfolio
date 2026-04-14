@@ -57,17 +57,17 @@ export default function About() {
           </div>
 
           <div className="about__text fade-in-right">
-            Professionally, I am currently working at Vifta Technology Limited as a Junior Software Developer,
-            where I contribute to building and maintaining digital solutions that enhance user experience
-            and business efficiency. I remain committed to continuous learning, always striving to
-            combine creativity with technical expertise to deliver impactful digital products.
+            I bring approximately three years of hands-on experience building web applications, 
+            along with over a year of professional experience working on real-world software projects. 
+            I’ve developed and maintained scalable, user-focused applications across both frontend 
+            and backend systems, collaborating with teams to deliver reliable, high-performance solutions.
           </div>
 
           <div className="about__text fade-in-right">
             Outside of work, I channel my creativity through video editing using tools like CapCut,
-            Adobe Premiere Pro, crafting engaging stories and visuals. I am collaborative, adaptable, and
-            open to learning new tools and technologies, bringing both technical skills and strong
-            interpersonal qualities to every project I work on.
+            Adobe Premiere Pro, crafting engaging stories and visuals. I’m passionate about writing clean,
+            maintainable code and continuously improving my skills by exploring modern technologies and best
+            practices in software development.
           </div>
 
           <div className="about__links fade-in-left">
@@ -125,6 +125,35 @@ export default function About() {
         <div className="about__experience-column">
           <h2 className="about__subheader">Experience</h2>
           <div className="about__exp-item">
+            <h3 className="fade-in-left stagger-1">
+              Software Developer – Collective Interchange
+            </h3>
+
+            <p className="fade-in-left stagger-1">
+              Built and optimized the Newcomer Navigator NL platform using React, Next.js, and TypeScript, 
+              delivering scalable and responsive user interfaces.
+            </p>
+
+            <p className="fade-in-left stagger-1">
+              Developed reusable UI components and integrated APIs and third-party services to enhance 
+              application functionality and user experience.
+            </p>
+
+            <p className="fade-in-left stagger-1">
+              Improved application performance through debugging, optimization, and adherence to clean 
+              architecture principles.
+            </p>
+
+            <p className="fade-in-left stagger-1">
+              Collaborated in code reviews and Git-based workflows, contributing to maintainable and 
+              production-ready code.
+            </p>
+
+            <p className="fade-in-left stagger-1">
+              Maintained technical documentation to support team collaboration and long-term scalability.
+            </p>
+          </div>
+          <div className="about__exp-item">
             <h3 className="fade-in-left stagger-1">Software Developer – Vifta Technology Limited</h3>
             <p className="fade-in-left stagger-1">
               Built and styled 10+ responsive pages using Next.js, MaterialUI and TypeScript,
@@ -179,6 +208,64 @@ export default function About() {
               <h3 className="fade-in-left stagger-1">ICTC WIL – Cloud Computing</h3>
               <p className="fade-in-left stagger-1">
                 ICTC Canada — Issued <span>Aug 2025</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Volunteer Experience */}
+      <section className="about__volunteer">
+        <h2 className="about__subheader">Volunteer Experience</h2>
+        <div className="about__volunteer-items">
+          <div>
+            <div className="about__volunteer-item">
+              <h3 className="fade-in-left stagger-1">
+                Mentor & Instructor Coordinator – TechNest Community
+              </h3>
+
+              <p className="fade-in-left stagger-1">
+                Support the growth of aspiring developers through structured mentorship and training programs.
+              </p>
+
+              <p className="fade-in-left stagger-1">
+                Coordinate instructors and contribute to curriculum planning to ensure effective learning delivery.
+              </p>
+
+              <p className="fade-in-left stagger-1">
+                Conduct interviews and evaluate prospective students to ensure they meet program requirements and are well-positioned for success.
+              </p>
+
+              <p className="fade-in-left stagger-1">
+                Mentor students in technical and career development, helping them build real-world skills.
+              </p>
+
+              <p className="fade-in-left stagger-1">
+                Facilitate communication between instructors, mentors, and students to maintain a smooth and impactful learning experience.
+              </p>
+            </div>
+
+            <div className="about__volunteer-item">
+              <h3 className="fade-in-left stagger-1">
+                Video Editor – Da Refiner's Fire Drama Ministry
+              </h3>
+
+              <p className="fade-in-left stagger-1">
+                Create and edit engaging video content for platforms including YouTube, Instagram, and TikTok, 
+                helping reach and grow a broader digital audience.
+              </p>
+
+              <p className="fade-in-left stagger-1">
+                Transform raw footage into compelling visual stories using CapCut, applying dynamic cuts, 
+                transitions, and effects.
+              </p>
+
+              <p className="fade-in-left stagger-1">
+                Optimize content for multiple formats, from short-form vertical videos to long-form productions.
+              </p>
+
+              <p className="fade-in-left stagger-1">
+                Manage end-to-end production, from concept and editing to final delivery.
               </p>
             </div>
           </div>

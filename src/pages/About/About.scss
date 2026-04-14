@@ -57,7 +57,10 @@
     gap: 3rem;
 
     &-column {
-      &>.about__exp-item,
+
+      &>.about__exp-item {
+        margin-bottom: 4rem;
+      }
       &>.about__edu-item {
         margin-bottom: 1.25rem;
       }
@@ -88,6 +91,27 @@
   &__cert-item {
     margin-bottom: 1.25rem;
   }
+
+  &__volunteer-items {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  &__volunteer-item {
+    margin-bottom: 4rem;
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        color: $primary-text-color;
+      }
+  }
 }
 
 /* 📲 Tablet (≤900px) */
@@ -116,7 +140,8 @@
       margin: 2rem 0 1rem;
     }
 
-    &__experience {
+    &__experience,
+    &__volunteer-items {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
