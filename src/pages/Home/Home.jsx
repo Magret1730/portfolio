@@ -3,6 +3,7 @@ import Hero from '../../components/Hero/Hero';
 import Home_About_Skill from "../../components/Home-About-Skill/Home-About-Skill";
 import Projects from '../Projects/Projects';
 import HomeContact from "../../components/HomeContact/HomeContact";
+import HomeExperience from "../../components/HomeExperience/HomeExperience";
 import posthog from "posthog-js";
 import { useEffect } from "react";
 
@@ -17,6 +18,7 @@ const Home = ({isDark}) => {
     <div className="home">
       <Hero />
       <Home_About_Skill />
+      <HomeExperience />
       <Projects all={false} isDark={isDark} />
       <HomeContact isDark={isDark} />
     </div>

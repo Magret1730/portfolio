@@ -37,16 +37,16 @@ const Home_About_Skill = () => {
               Keyin College, further strengthening my technical foundation.
             </p>
             <p className="home-about-skill__detail fade-in-left stagger-2">
-              Professionally, I am currently working at Vifta Technology Limited as a Junior Software Developer,
-              where I contribute to building and maintaining digital solutions that enhance user experience
-              and business efficiency. I remain committed to continuous learning, always striving to
-              combine creativity with technical expertise to deliver impactful digital products.
+              I bring approximately three years of hands-on experience building web applications, 
+              along with over a year of professional experience working on real-world software projects. 
+              I’ve developed and maintained scalable, user-focused applications across both frontend 
+              and backend systems, collaborating with teams to deliver reliable, high-performance solutions.
             </p>
             <p className="home-about-skill__detail fade-in-left stagger-2">
               Outside of work, I channel my creativity through video editing using tools like CapCut,
-              crafting engaging stories and visuals. I am collaborative, adaptable, and open to learning
-              new tools and technologies, bringing both technical skills and strong interpersonal qualities
-              to every project I work on.
+              crafting engaging stories and visuals. I’m passionate about writing clean, maintainable code and
+              continuously improving my skills by exploring modern technologies and best practices in software
+              development.
             </p>
           </div>
 
