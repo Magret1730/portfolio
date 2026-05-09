@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { FiMessageCircle, FiX, FiSend } from 'react-icons/fi'
 import './Assistant.scss'
+import posthog from "posthog-js";
 
 /**
  * Portfolio AI Assistant — floating chat; history in React state only (no DB).
@@ -47,12 +48,26 @@ export default function Assistant() {
   const listRef = useRef(null)
 
   useEffect(() => {
+    posthog.capture('AI_assistant_button_clicked', {
+      page: window.location.pathname,
+    });
+  }, []);
+
+  useEffect(() => {
     if (!open) return
     const el = listRef.current
     if (el) el.scrollTop = el.scrollHeight
   }, [messages, open, loading])
 
   async function send() {
+    if (input.trim().length > 0) {
+      posthog.capture('AI_assistant_message_sent', {
+        message: input,
+        page: window.location.pathname,
+        location: 'assistant_section',
+      });
+    }
+
     const trimmed = input.trim()
     if (!trimmed || loading) return
     if (trimmed.length > MAX_MESSAGE_CHARS) return
@@ -202,7 +217,13 @@ export default function Assistant() {
       <button
         type="button"
         className="assistant__fab"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          posthog.capture('AI_assistant_open_button_clicked', {
+            page: window.location.pathname,
+            location: 'AI_assistant_section',
+          });
+          setOpen((v) => !v);
+        }}
         aria-expanded={open}
         aria-label={open ? 'Close chat assistant' : 'Open chat assistant'}
       >
