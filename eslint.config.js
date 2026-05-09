@@ -36,4 +36,15 @@ export default [
       'react/prop-types': 'off'
     },
   },
+  {
+    files: [
+      'vite.config.js',
+      'vite-plugin-assistant-api.js',
+      'server.mjs',
+      'server/**/*.mjs',
+    ],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ]
