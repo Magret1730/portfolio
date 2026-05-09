@@ -9,6 +9,7 @@ import Contact from './pages/Contact/Contact';
 import Projects from './pages/Projects/Projects';
 import "./styles/partials/_global.scss";
 import Footer from './components/Footer/Footer';
+import Assistant from './components/Assistant/Assistant';
 import { useState, useEffect } from 'react';
 
 const saved = localStorage.getItem("theme");
@@ -61,6 +62,7 @@ function App() {
         <Route path="/projects" element={<Projects all={true} isDark={isDark} />} />
       </Routes>
       <Footer />
+      <Assistant />
       <ToastContainer />
     </section>
   )
