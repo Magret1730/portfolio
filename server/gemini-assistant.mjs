@@ -18,10 +18,9 @@ import { buildPortfolioSystemInstruction } from './portfolio-context.mjs'
 
 /** Shown for upstream failures (rate limits, outages, network) — never leak raw API text. */
 export const ASSISTANT_UNAVAILABLE_USER_MESSAGE =
-  'AI assistant is temporarily unavailable. Please try again later.'
+  'Magret\'s AI assistant is temporarily unavailable. Please try again later.'
 
-const GEMINI_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
+const GEMINI_URL = process.env.GEMINI_URL
 
 const MAX_MESSAGES = 24
 /** Per-message cap so one turn cannot blow request size or tokens. */

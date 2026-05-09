@@ -10,7 +10,7 @@ import './Assistant.scss'
 
 /** Must match server copy for network failures when the server does not respond with JSON. */
 const ASSISTANT_UNAVAILABLE_USER_MESSAGE =
-  'AI assistant is temporarily unavailable. Please try again later.'
+  'Magret\'s AI assistant is temporarily unavailable. Please try again later.'
 
 const MAX_MESSAGE_CHARS = 2000
 
@@ -131,7 +131,7 @@ export default function Assistant() {
           <div className="assistant__body" ref={listRef}>
             {messages.length === 0 && !loading && (
               <p className="assistant__hint">
-                Ask about Abiodun&apos;s projects, stack, experience, TechNest mentoring,
+                Ask about Magret&apos;s projects, stack, experience,
                 certifications, or how to connect — answers use this portfolio&apos;s content
                 via Gemini on the server.
               </p>
