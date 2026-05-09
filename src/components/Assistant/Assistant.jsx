@@ -3,8 +3,9 @@ import { FiMessageCircle, FiX, FiSend } from 'react-icons/fi'
 import './Assistant.scss'
 
 /**
- * Floating chat widget: message history lives in React state only (no DB).
+ * Portfolio AI Assistant — floating chat; history in React state only (no DB).
  * Each send: POST /api/assistant with the transcript — the browser never sees GEMINI_API_KEY.
+ * Scope and off-topic behavior are enforced server-side via Gemini system instructions + site facts.
  */
 
 /** Must match server copy for network failures when the server does not respond with JSON. */
@@ -115,7 +116,7 @@ export default function Assistant() {
           aria-busy={loading}
         >
           <header className="assistant__header">
-            <span className="assistant__title">Ask about this site</span>
+            <span className="assistant__title">Portfolio AI Assistant</span>
             <button
               type="button"
               className="assistant__icon-btn"
@@ -130,8 +131,9 @@ export default function Assistant() {
           <div className="assistant__body" ref={listRef}>
             {messages.length === 0 && !loading && (
               <p className="assistant__hint">
-                Ask about projects, skills, or how to get in touch — answers are generated
-                on the server with Gemini.
+                Ask about Abiodun&apos;s projects, stack, experience, TechNest mentoring,
+                certifications, or how to connect — answers use this portfolio&apos;s content
+                via Gemini on the server.
               </p>
             )}
             {messages.map((m, i) => (

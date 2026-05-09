@@ -4,7 +4,17 @@
  *
  * Security: GEMINI_API_KEY is read only in Node (Vite plugin / server.mjs). It is
  * never sent to the browser or bundled into the client.
+ *
+ * Request flow (interview-friendly):
+ * 1) Frontend POSTs chat messages to /api/assistant.
+ * 2) After validation, we always make ONE generateContent call to Gemini (no agent framework).
+ * 3) That call includes a systemInstruction built from server/portfolio-context.mjs (real site/repo facts).
+ * 4) Portfolio vs off-topic: we do not run regex or a second model to "classify" questions. The system
+ *    instruction tells Gemini what is in scope and requires off-topic replies to use the exact
+ *    PORTFOLIO_ASSISTANT_OFF_TOPIC_REPLY string from portfolio-context.mjs.
  */
+
+import { buildPortfolioSystemInstruction } from './portfolio-context.mjs'
 
 /** Shown for upstream failures (rate limits, outages, network) — never leak raw API text. */
 export const ASSISTANT_UNAVAILABLE_USER_MESSAGE =
@@ -40,12 +50,17 @@ function isRateOrCapacityIssue(status, apiError) {
 }
 
 /**
- * Calls Gemini with a short conversation history (user/model turns).
+ * Calls Gemini with portfolio system instructions + conversation history.
  * Throws on failure — caller maps all throws to ASSISTANT_UNAVAILABLE_USER_MESSAGE for clients.
  */
 async function callGemini(apiKey, messages) {
   const url = `${GEMINI_URL}?key=${encodeURIComponent(apiKey)}`
+  const systemInstruction = buildPortfolioSystemInstruction()
+
   const body = {
+    systemInstruction: {
+      parts: [{ text: systemInstruction }],
+    },
     contents: messages.map((m) => ({
       role: m.role,
       parts: [{ text: m.text }],
@@ -60,7 +75,6 @@ async function callGemini(apiKey, messages) {
       body: JSON.stringify(body),
     })
   } catch {
-    // Network error, DNS, timeout — same UX as API down.
     throw new Error('network')
   }
 
@@ -68,7 +82,6 @@ async function callGemini(apiKey, messages) {
 
   if (!res.ok) {
     const apiError = data?.error
-    // Always throw; handleAssistantPost converts to a safe user message (no raw Gemini text).
     if (isRateOrCapacityIssue(res.status, apiError)) {
       throw new Error('rate_or_capacity')
     }
@@ -154,17 +167,16 @@ export async function handleAssistantPost(apiKey, bodyText) {
     }
   }
 
-  // Normalize whitespace for the upstream request (validation already used trimmed length).
   const normalized = messages.map((m) => ({
     role: m.role,
     text: m.text.trim(),
   }))
 
   try {
+    // Single Gemini call: systemInstruction (portfolio scope + off-topic rules) + chat contents.
     const text = await callGemini(apiKey, normalized)
     return { statusCode: 200, payload: { text } }
   } catch {
-    // Rate limits, 5xx, network, empty model reply — one professional line for visitors.
     return {
       statusCode: 503,
       payload: { error: ASSISTANT_UNAVAILABLE_USER_MESSAGE },
