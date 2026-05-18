@@ -13,7 +13,8 @@ export function assistantApiPlugin() {
     name: 'assistant-api',
     configureServer(server) {
       const env = loadEnv(server.config.mode, process.cwd(), '')
-      const apiKey = env.GEMINI_API_KEY
+      if (env.GEMINI_API_KEY) process.env.GEMINI_API_KEY = env.GEMINI_API_KEY
+      if (env.GEMINI_URL) process.env.GEMINI_URL = env.GEMINI_URL
 
       server.middlewares.use(async (req, res, next) => {
         if (req.url !== '/api/assistant' || req.method !== 'POST') {
@@ -27,7 +28,10 @@ export function assistantApiPlugin() {
         const bodyText = Buffer.concat(chunks).toString('utf8')
 
         try {
-          const { statusCode, payload } = await handleAssistantPost(apiKey, bodyText)
+          const { statusCode, payload } = await handleAssistantPost(
+            process.env.GEMINI_API_KEY,
+            bodyText,
+          )
           res.statusCode = statusCode
           res.setHeader('Content-Type', 'application/json')
           res.end(JSON.stringify(payload))

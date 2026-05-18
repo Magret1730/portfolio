@@ -27,8 +27,26 @@ It showcases my skills, projects, and professional background as a Software Deve
 `cd portfolio`
 3. Install dependencies
 `npm install`
-4. Start the development server
+4. Copy environment variables and fill in your values:
+```bash
+cp .env.example .env
+```
+5. Start the development server
 `npm run dev`
+
+### Portfolio AI assistant (local dev)
+
+The chat widget calls `POST /api/assistant`. During `npm run dev`, the Vite plugin in `vite-plugin-assistant-api.js` handles that route and reads **server-only** variables from `.env` (not exposed to the browser):
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `GEMINI_API_KEY` | Yes | Google AI Studio API key |
+| `GEMINI_URL` | Yes | Full `generateContent` URL for your model |
+
+Example `GEMINI_URL`:
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`
+
+If either is missing, `/api/assistant` returns 503. After `npm run build`, `npm start` reads `GEMINI_*` from `.env` (or from variables you export in the shell).
 
 ## License
 This project is licensed under the [MIT License](./LICENSE).

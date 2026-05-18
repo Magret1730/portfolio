@@ -79,10 +79,15 @@ export default function Assistant() {
     setLoading(true)
 
     try {
+      const apiMessages = nextMessages.map((m) => ({
+        role: m.role === 'assistant' ? 'model' : m.role,
+        text: m.text,
+      }))
+
       const res = await fetch('/api/assistant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: nextMessages }),
+        body: JSON.stringify({ messages: apiMessages }),
       })
 
       const data = await safeReadJson(res)
