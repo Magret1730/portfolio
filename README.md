@@ -46,7 +46,20 @@ The chat widget calls `POST /api/assistant`. During `npm run dev`, the Vite plug
 Example `GEMINI_URL`:
 `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`
 
-If either is missing, `/api/assistant` returns 503. After `npm run build`, `npm start` reads `GEMINI_*` from `.env` (or from variables you export in the shell).
+If either is missing, `/api/assistant` returns 503.
+
+### Portfolio AI assistant (Netlify production)
+
+Production uses a Netlify serverless function (`netlify/functions/assistant.mjs`) that reuses `server/gemini-assistant.mjs`. `netlify.toml` rewrites `POST /api/assistant` to that function.
+
+In the Netlify UI (**Site configuration → Environment variables**), set the same server-only variables (do **not** use a `VITE_` prefix):
+
+- `GEMINI_API_KEY`
+- `GEMINI_URL`
+
+Redeploy after adding or changing env vars. The API key is never exposed to the browser.
+
+Optional: test the function locally with [Netlify CLI](https://docs.netlify.com/cli/get-started/) (`netlify dev`). For frontend-only work, `npm run dev` still uses the Vite plugin route.
 
 ## License
 This project is licensed under the [MIT License](./LICENSE).
