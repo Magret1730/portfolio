@@ -2,8 +2,8 @@
  * Server-only Gemini helper: validates the client payload, calls the REST API,
  * and returns a plain object the HTTP layer can turn into JSON.
  *
- * Security: GEMINI_API_KEY is read only in Node (Vite plugin / server.mjs). It is
- * never sent to the browser or bundled into the client.
+ * Security: GEMINI_API_KEY is read only on the server (Vite dev plugin, Netlify
+ * function, or server.mjs). It is never sent to the browser or bundled into the client.
  *
  * Request flow (interview-friendly):
  * 1) Frontend POSTs chat messages to /api/assistant.
