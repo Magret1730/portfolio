@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
  * Minimal production-style server: serves `dist/` and POST /api/assistant.
- * Usage after build: GEMINI_API_KEY=... node server.mjs
+ * Loads GEMINI_* from `.env` when not already set in the shell.
  * (Static hosts like GitHub Pages won't run this — use a Node host or split API elsewhere.)
  */
 
 import http from 'http'
 import fs from 'fs/promises'
+import { readFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import {
@@ -17,7 +18,34 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, 'dist')
 const PORT = Number(process.env.PORT) || 4173
-const apiKey = process.env.GEMINI_API_KEY
+
+/** Loads GEMINI_API_KEY and GEMINI_URL from project `.env` if missing from process.env. */
+function loadGeminiEnvFromDotenv() {
+  try {
+    const text = readFileSync(path.join(__dirname, '.env'), 'utf8')
+    for (const line of text.split('\n')) {
+      const trimmed = line.trim()
+      if (!trimmed || trimmed.startsWith('#')) continue
+      const eq = trimmed.indexOf('=')
+      if (eq === -1) continue
+      const key = trimmed.slice(0, eq).trim()
+      if (key !== 'GEMINI_API_KEY' && key !== 'GEMINI_URL') continue
+      if (process.env[key]) continue
+      let value = trimmed.slice(eq + 1).trim()
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1)
+      }
+      process.env[key] = value
+    }
+  } catch {
+    // .env optional when vars are exported in the shell
+  }
+}
+
+loadGeminiEnvFromDotenv()
 
 const MIME = {
   '.html': 'text/html',
@@ -66,7 +94,10 @@ const server = http.createServer(async (req, res) => {
     const bodyText = Buffer.concat(chunks).toString('utf8')
 
     try {
-      const { statusCode, payload } = await handleAssistantPost(apiKey, bodyText)
+      const { statusCode, payload } = await handleAssistantPost(
+        process.env.GEMINI_API_KEY,
+        bodyText,
+      )
       res.writeHead(statusCode, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify(payload))
     } catch {

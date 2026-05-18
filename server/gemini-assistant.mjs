@@ -20,8 +20,6 @@ import { buildPortfolioSystemInstruction } from './portfolio-context.mjs'
 export const ASSISTANT_UNAVAILABLE_USER_MESSAGE =
   'Magret\'s AI assistant is temporarily unavailable. Please try again later.'
 
-const GEMINI_URL = process.env.GEMINI_URL
-
 const MAX_MESSAGES = 24
 /** Per-message cap so one turn cannot blow request size or tokens. */
 const MAX_MESSAGE_CHARS = 2000
@@ -53,7 +51,11 @@ function isRateOrCapacityIssue(status, apiError) {
  * Throws on failure — caller maps all throws to ASSISTANT_UNAVAILABLE_USER_MESSAGE for clients.
  */
 async function callGemini(apiKey, messages) {
-  const url = `${GEMINI_URL}?key=${encodeURIComponent(apiKey)}`
+  const geminiUrl = process.env.GEMINI_URL
+  if (!geminiUrl) {
+    throw new Error('missing_gemini_url')
+  }
+  const url = `${geminiUrl}?key=${encodeURIComponent(apiKey)}`
   const systemInstruction = buildPortfolioSystemInstruction()
 
   const body = {
