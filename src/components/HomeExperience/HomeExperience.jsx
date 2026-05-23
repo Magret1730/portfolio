@@ -6,7 +6,7 @@ const HomeExperience = () => {
       {/* Experience & Education */}
       <section className="experience__section">
         <div className="experience__container">
-          <h2 className="experience__subheader">Experience</h2>
+          <h2 className="experience__subheader">Professional Experience</h2>
           <div className="experience__column">
             <div className="experience__exp-items">
               <div className="experience__exp-item">
