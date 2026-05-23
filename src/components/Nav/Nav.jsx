@@ -70,7 +70,7 @@ export default function Nav({ isDark, toggleTheme }) {
 
         {/* Navigation Links */}
         <div className={menuOpen ? "nav__navlinks--opened" : "nav__navlinks--closed"}>
-          <NavLink
+          {/* <NavLink
             className={({ isActive }) =>
               `nav__link${isActive ? " nav__link--active" : ""}`
             }
@@ -78,7 +78,7 @@ export default function Nav({ isDark, toggleTheme }) {
             onClick={handleLinkClick}
           >
             Home
-          </NavLink>
+          </NavLink> */}
           <NavLink
             className={({ isActive }) =>
               `nav__link${isActive ? " nav__link--active" : ""}`
