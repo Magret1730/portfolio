@@ -276,24 +276,24 @@ export default function About() {
 							</h3>
 
 							<p className="fade-in-left stagger-1">
-								Support the growth of aspiring developers through structured
-								mentorship and training programs.
+								Conduct interview sessions for prospective students and assess
+								their suitability for the program.
 							</p>
 
 							<p className="fade-in-left stagger-1">
-								Coordinate instructors and contribute to curriculum planning to
-								ensure effective learning delivery.
+								Coordinate instructors and mentors to support smooth program
+								delivery and effective communication.
 							</p>
 
 							<p className="fade-in-left stagger-1">
-								Conduct interviews and evaluate prospective students to ensure
-								they meet program requirements and are well-positioned for
-								success.
+								Lead information sessions for mentors, students, and instructors
+								to explain program expectations, structure, and next steps.
 							</p>
 
 							<p className="fade-in-left stagger-1">
-								Mentor students in technical and career development, helping
-								them build real-world skills.
+								Serve as a point of contact for mentors, students, and
+								instructors, helping resolve challenges and escalating issues
+								when necessary.
 							</p>
 
 							<p className="fade-in-left stagger-1">
