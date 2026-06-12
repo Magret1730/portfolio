@@ -11,6 +11,7 @@ import "./styles/partials/_global.scss";
 import Footer from './components/Footer/Footer';
 import Assistant from './components/Assistant/Assistant';
 import { useState, useEffect } from 'react';
+import GymManagementProject from './pages/Projects/ProjectSummary/GymManagementProject/GymManagementProject';
 
 const saved = localStorage.getItem("theme");
 if (saved === "dark") {
@@ -60,6 +61,7 @@ function App() {
         <Route path="/about" element={<About isDark={isDark} />} />
         <Route path="/contact" element={<Contact isDark={isDark} />} />
         <Route path="/projects" element={<Projects all={true} isDark={isDark} />} />
+        <Route path="/ProjectSummary/GymManagementProject" element={<GymManagementProject />} />
       </Routes>
       <Footer />
       <Assistant />

@@ -21,72 +21,104 @@ const Projects = ({all, isDark}) => {
   }, []);
 
   const projectData = [
-    {
-      image: DaRefinersFire,
-      title: "Da Refiner's Fire",
-      description: "Da Refiner's Fire (DRF) is a ministry-focused website designed to share spirit-filled short videos.",
-      skills: "React, MUI, Next.js, Typescript, Tailwindcss, Posthog, EmailJS",
-      liveLink: "https://darefinersfire.org",
-      githubLink: "https://github.com/Magret1730/darefinersfire"
-    },
-    {
-      image: JavaGymManagementSystem,
-      title: "Gym Management System",
-      description: "The Gym Management System is a console-based application with role-based access for Admins, Trainers, and Members.",
-      skills: "Java, PostgreSQL, Javadocs, Collaboration",
-      liveLink: "https://youtu.be/Ut9ake7GVQg",
-      githubLink: "https://github.com/CactusTournament/JavaFinalWinter2025"
-    },
-    {
-      image: InstaloanXFrontpage,
-      title: "InstaloanX",
-      description: "A loan management app allowing users to apply, repay, and track loans while enabling admins to update statuses efficiently.",
-      skills: "React.js, Express.js, JWT, Bcrypt, Knex.js, MySQL, Sass",
-      liveLink: "https://instaloanx.netlify.app/",
-      githubLink: "https://github.com/Magret1730/instaloanx-app"
-    },
-    {
-      image: Instock,
-      title: "Instock",
-      description: "A collaborative inventory management app that lets users manage warehouses and items through an intuitive interface.",
-      skills: "React.js, Express.js, Node.js, Sass, Knex.js, MySQL",
-      liveLink: "https://github.com/kngo/group2-instock",
-      githubLink: "https://github.com/kngo/group2-instock"
-    },
-    {
-      image: Bookhive,
-      title: "Bookhive",
-      description: "A backend platform for discovering and reviewing books with seamless access to a RESTful API for book data.",
-      skills: "Node.js, Express.js, REST API, PostgreSQL, Sequelize ORM",
-      liveLink: "https://github.com/Magret1730/BookHive-Portfolio-Project",
-      githubLink: "https://github.com/Magret1730/BookHive-Portfolio-Project"
-    },
-    {
-      image: TaskifyHub,
-      title: "TaskifyHub",
-      description: "A task management app that helps users organize, prioritize, and track tasks with responsive design and authentication.",
-      skills: "Flask, Flask-Login, Flask-SQLAlchemy, SQLite, itsdangerous",
-      liveLink: "https://taskifyhub.pythonanywhere.com/",
-      githubLink: "https://github.com/Magret1730/taskify-hub-portfolio-project"
-    },
-    {
-      image: SeamLess,
-      title: "SeamLess",
-      description: "A transportation booking platform connecting users to local services with a simple and user-friendly interface.",
-      skills: "React.js, Express.js, Node.js, MySQL, Sass",
-      liveLink: "https://github.com/Magret1730/omnicoders-ip-client",
-      githubLink: "https://github.com/Magret1730/omnicoders-ip-client"
-    },
-    {
-      image: HarryPotter,
-      title: "Harry Potter",
-      description: "A fan-made website showcasing characters, spells, and information about the Harry Potter series.",
-      skills: "HTML, CSS, JavaScript",
-      liveLink: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
-      githubLink: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game"
-    }
-    // Snaps, Keyin Second Semester Project (Context API)
-  ];
+		{
+			image: DaRefinersFire,
+			title: "Da Refiner's Fire",
+			description:
+				"Da Refiner's Fire (DRF) is a ministry-focused website designed to share spirit-filled short videos.",
+			skills: "React, MUI, Next.js, Typescript, Tailwindcss, Posthog, EmailJS",
+			liveLink: {
+				pathname: "https://darefinersfire.org",
+				target: "_blank"
+			},
+			githubLink: "https://github.com/Magret1730/darefinersfire",
+		},
+		{
+			image: JavaGymManagementSystem,
+			title: "Gym Management System",
+			description:
+				"The Gym Management System is a console-based application with role-based access for Admins, Trainers, and Members.",
+			skills: "Java, PostgreSQL, Javadocs, Collaboration",
+			liveLink: {
+				pathname: "/ProjectSummary/GymManagementProject",
+				target: "_self"
+			},
+			githubLink: "https://github.com/CactusTournament/JavaFinalWinter2025",
+		},
+		{
+			image: InstaloanXFrontpage,
+			title: "InstaloanX",
+			description:
+				"A loan management app allowing users to apply, repay, and track loans while enabling admins to update statuses efficiently.",
+			skills: "React.js, Express.js, JWT, Bcrypt, Knex.js, MySQL, Sass",
+			liveLink: {
+				pathname: "https://instaloanx.netlify.app/",
+				target: "_blank"
+			},
+			githubLink: "https://github.com/Magret1730/instaloanx-app",
+		},
+		{
+			image: Instock,
+			title: "Instock",
+			description:
+				"A collaborative inventory management app that lets users manage warehouses and items through an intuitive interface.",
+			skills: "React.js, Express.js, Node.js, Sass, Knex.js, MySQL",
+			liveLink: {
+				pathname: "https://github.com/kngo/group2-instock",
+				target: "_blank"
+			},
+			githubLink: "https://github.com/kngo/group2-instock",
+		},
+		{
+			image: Bookhive,
+			title: "Bookhive",
+			description:
+				"A backend platform for discovering and reviewing books with seamless access to a RESTful API for book data.",
+			skills: "Node.js, Express.js, REST API, PostgreSQL, Sequelize ORM",
+			liveLink: {
+				pathname: "https://github.com/Magret1730/BookHive-Portfolio-Project",
+				target: "_blank"
+			},
+			githubLink: "https://github.com/Magret1730/BookHive-Portfolio-Project",
+		},
+		{
+			image: TaskifyHub,
+			title: "TaskifyHub",
+			description:
+				"A task management app that helps users organize, prioritize, and track tasks with responsive design and authentication.",
+			skills: "Flask, Flask-Login, Flask-SQLAlchemy, SQLite, itsdangerous",
+			liveLink: {
+				pathname: "https://taskifyhub.pythonanywhere.com/",
+				target: "_blank"
+			},
+			githubLink: "https://github.com/Magret1730/taskify-hub-portfolio-project",
+		},
+		{
+			image: SeamLess,
+			title: "SeamLess",
+			description:
+				"A transportation booking platform connecting users to local services with a simple and user-friendly interface.",
+			skills: "React.js, Express.js, Node.js, MySQL, Sass",
+			liveLink: {
+				pathname: "https://github.com/Magret1730/omnicoders-ip-client",
+				target: "_blank"
+			},
+			githubLink: "https://github.com/Magret1730/omnicoders-ip-client",
+		},
+		{
+			image: HarryPotter,
+			title: "Harry Potter",
+			description:
+				"A fan-made website showcasing characters, spells, and information about the Harry Potter series.",
+			skills: "HTML, CSS, JavaScript",
+			liveLink: {
+				pathname: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
+				target: "_blank"
+			},
+			githubLink: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
+		},
+		// Snaps, Keyin Second Semester Project (Context API)
+	];
 
   const displayedProjects = all ? projectData : projectData.slice(0, 4);
 

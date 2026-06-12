@@ -14,13 +14,15 @@ const Project = ({project, isDark}) => {
   const icons = [
     {
       component: <FaLink />,
-      link: project.liveLink,
+      link: project.liveLink.pathname,
+      target: project.liveLink.target, 
       style: "project__icon-button",
       linkStyle: "project__icon-button-link"
     },
     {
       component: <FaGithub />,
       link: project.githubLink,
+      target: "_blank",
       style: "project__icon-button",
       linkStyle: "project__icon-button-link"
     }
