@@ -7,6 +7,20 @@ import Icon from "../Icon/Icon";
 import posthog from "posthog-js";
 import { useEffect } from "react";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function Hero() {
   useEffect(() => { // How many visitors reached the hero section
     posthog.capture('hero_section_viewed', {
