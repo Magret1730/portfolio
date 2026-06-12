@@ -112,7 +112,7 @@ const Projects = ({all, isDark}) => {
 				"A fan-made website showcasing characters, spells, and information about the Harry Potter series.",
 			skills: "HTML, CSS, JavaScript",
 			liveLink: {
-				pathname: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
+				pathname: "https://harry-potter-game-nu.vercel.app",
 				target: "_blank",
 			},
 			githubLink: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
