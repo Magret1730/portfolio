@@ -29,7 +29,7 @@ const Projects = ({all, isDark}) => {
 			skills: "React, MUI, Next.js, Typescript, Tailwindcss, Posthog, EmailJS",
 			liveLink: {
 				pathname: "https://darefinersfire.org",
-				target: "_blank"
+				target: "_blank",
 			},
 			githubLink: "https://github.com/Magret1730/darefinersfire",
 		},
@@ -41,7 +41,7 @@ const Projects = ({all, isDark}) => {
 			skills: "Java, PostgreSQL, Javadocs, Collaboration",
 			liveLink: {
 				pathname: "/ProjectSummary/GymManagementProject",
-				target: "_self"
+				target: "_self",
 			},
 			githubLink: "https://github.com/CactusTournament/JavaFinalWinter2025",
 		},
@@ -53,7 +53,7 @@ const Projects = ({all, isDark}) => {
 			skills: "React.js, Express.js, JWT, Bcrypt, Knex.js, MySQL, Sass",
 			liveLink: {
 				pathname: "https://instaloanx.netlify.app/",
-				target: "_blank"
+				target: "_blank",
 			},
 			githubLink: "https://github.com/Magret1730/instaloanx-app",
 		},
@@ -64,8 +64,8 @@ const Projects = ({all, isDark}) => {
 				"A collaborative inventory management app that lets users manage warehouses and items through an intuitive interface.",
 			skills: "React.js, Express.js, Node.js, Sass, Knex.js, MySQL",
 			liveLink: {
-				pathname: "https://github.com/kngo/group2-instock",
-				target: "_blank"
+				pathname: "/ProjectSummary/InStockProject",
+				target: "_self",
 			},
 			githubLink: "https://github.com/kngo/group2-instock",
 		},
@@ -77,7 +77,7 @@ const Projects = ({all, isDark}) => {
 			skills: "Node.js, Express.js, REST API, PostgreSQL, Sequelize ORM",
 			liveLink: {
 				pathname: "https://github.com/Magret1730/BookHive-Portfolio-Project",
-				target: "_blank"
+				target: "_blank",
 			},
 			githubLink: "https://github.com/Magret1730/BookHive-Portfolio-Project",
 		},
@@ -89,7 +89,7 @@ const Projects = ({all, isDark}) => {
 			skills: "Flask, Flask-Login, Flask-SQLAlchemy, SQLite, itsdangerous",
 			liveLink: {
 				pathname: "https://taskifyhub.pythonanywhere.com/",
-				target: "_blank"
+				target: "_blank",
 			},
 			githubLink: "https://github.com/Magret1730/taskify-hub-portfolio-project",
 		},
@@ -101,7 +101,7 @@ const Projects = ({all, isDark}) => {
 			skills: "React.js, Express.js, Node.js, MySQL, Sass",
 			liveLink: {
 				pathname: "https://github.com/Magret1730/omnicoders-ip-client",
-				target: "_blank"
+				target: "_blank",
 			},
 			githubLink: "https://github.com/Magret1730/omnicoders-ip-client",
 		},
@@ -113,7 +113,7 @@ const Projects = ({all, isDark}) => {
 			skills: "HTML, CSS, JavaScript",
 			liveLink: {
 				pathname: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
-				target: "_blank"
+				target: "_blank",
 			},
 			githubLink: "https://github.com/AlexandriaBalkaran/Harry-Potter-Game",
 		},
