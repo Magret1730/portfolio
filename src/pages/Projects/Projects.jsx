@@ -76,8 +76,8 @@ const Projects = ({all, isDark}) => {
 				"A backend platform for discovering and reviewing books with seamless access to a RESTful API for book data.",
 			skills: "Node.js, Express.js, REST API, PostgreSQL, Sequelize ORM",
 			liveLink: {
-				pathname: "https://github.com/Magret1730/BookHive-Portfolio-Project",
-				target: "_blank",
+				pathname: "/ProjectSummary/BookHiveProject",
+				target: "_self",
 			},
 			githubLink: "https://github.com/Magret1730/BookHive-Portfolio-Project",
 		},

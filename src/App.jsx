@@ -13,6 +13,7 @@ import Assistant from './components/Assistant/Assistant';
 import { useState, useEffect } from 'react';
 import GymManagementProject from './pages/Projects/ProjectSummary/GymManagementProject/GymManagementProject';
 import InStockProject from './pages/Projects/ProjectSummary/InStockProject/InStockProject';
+import BookHiveProject from './pages/Projects/ProjectSummary/BookHiveProject/BookHiveProject';
 
 const saved = localStorage.getItem("theme");
 if (saved === "dark") {
@@ -64,6 +65,7 @@ function App() {
         <Route path="/projects" element={<Projects all={true} isDark={isDark} />} />
         <Route path="/ProjectSummary/GymManagementProject" element={<GymManagementProject />} />
         <Route path="/ProjectSummary/InStockProject" element={<InStockProject />} />
+        <Route path="/ProjectSummary/BookHiveProject" element={<BookHiveProject />} />
       </Routes>
       <Footer />
       <Assistant />

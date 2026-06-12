@@ -129,12 +129,12 @@ const InStockProject = () => {
 							rel="noopener noreferrer"
 						>
 							<Button
-								name="View Backend Code"
+								name="View Backend Repository"
 								style="button__home-contact"
 								onClick={() => {
 									posthog.capture("cta_clicked", {
 										location: "instock_summary_page_hero_section",
-										button_name: "View Backend Code",
+										button_name: "View Backend Repo",
 									});
 								}}
 							/>
@@ -146,7 +146,7 @@ const InStockProject = () => {
 							rel="noopener noreferrer"
 						>
 							<Button
-								name="View Frontend Repo"
+								name="View Frontend Repository"
 								style="button__home-contact"
 								onClick={() => {
 									posthog.capture("cta_clicked", {

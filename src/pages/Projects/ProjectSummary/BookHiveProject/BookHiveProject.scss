@@ -1,7 +1,7 @@
 @use "../../../../styles/partials/mixins" as *;
 @use "../../../../styles/partials/variables" as *;
 
-.instock-summary-page {
+.bookhive-summary-page {
   min-height: 100vh;
   background: var(--supporting-color);
   color: var(--primary-text-color);
@@ -15,14 +15,17 @@
   }
 
   &__hero-content {
-    margin: 0 0;
+    max-width: 68.75rem;
+    margin: 0 auto;
   }
 
   &__hero-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
     width: 100%;
-    padding-top: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   &__back-link {
@@ -98,7 +101,7 @@
   &__feature-card,
   &__contribution-card,
   &__endpoint-card,
-  &__collaboration-card {
+  &__security-card {
     border: 1px solid rgba(148, 163, 184, 0.28);
     border-radius: 1.4rem;
     background: var(--supporting-color);
@@ -221,7 +224,7 @@
   }
 
   &__contribution-card,
-  &__collaboration-card {
+  &__security-card {
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: 2rem;
@@ -301,30 +304,11 @@
     font-size: 0.75rem;
     font-weight: 900;
   }
-
-
-
-  &__contributors {
-    display: grid;
-    gap: 0.8rem;
-    align-content: start;
-
-    a {
-      color: var(--primary-link-text-color);
-      font-weight: 800;
-      text-decoration: none;
-
-      &:hover {
-        color: var(--secondary-link-text-color);
-        text-decoration: underline;
-      }
-    }
-  }
 }
 
 /* Tablet (601–900px) */
 @media (min-width: 601px) and (max-width: 900px) {
-  .instock-summary-page {
+  .bookhive-summary-page {
     &__hero {
       @include tablet-spacing;
       padding-top: 7rem;
@@ -340,7 +324,7 @@
     &__overview-grid,
     &__feature-grid,
     &__contribution-card,
-    &__collaboration-card {
+    &__security-card {
       grid-template-columns: 1fr;
     }
 
@@ -358,7 +342,7 @@
 
 /* Mobile (≤ 600px) */
 @media (max-width: 600px) {
-  .instock-summary-page {
+  .bookhive-summary-page {
     &__hero {
       @include mobile-spacing;
       padding-top: 6rem;
@@ -396,7 +380,7 @@
     &__overview-grid,
     &__feature-grid,
     &__contribution-card,
-    &__collaboration-card {
+    &__security-card {
       grid-template-columns: 1fr;
     }
 
@@ -404,13 +388,13 @@
     &__feature-card,
     &__contribution-card,
     &__endpoint-card,
-    &__collaboration-card {
+    &__security-card {
       border-radius: 1rem;
     }
 
     &__card,
     &__contribution-card,
-    &__collaboration-card {
+    &__security-card {
       padding: 1.1rem;
     }
 
