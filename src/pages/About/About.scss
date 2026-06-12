@@ -4,7 +4,7 @@
 .about {
   @include desktop-spacing;
   margin-top: 5rem;
-  color: $primary-text-color;
+  color: var(--primary-text-color);
 
   /* Top Section */
   &__top {
@@ -24,11 +24,12 @@
   &__intro {
     flex: 1;
     font-size: 1.05rem;
-    color: $primary-text-color;
+    color: var(--primary-text-color);
   }
 
   &__text {
     margin-bottom: 1.25rem;
+    line-height: 1.7;
   }
 
   &__actions {
@@ -50,78 +51,198 @@
     gap: 1rem;
   }
 
-  /* Skills */
-  &__skills {
-    margin-top: 6rem;
-    margin-bottom: 4rem;
-  }
-
-  /* Experience & Education */
-  &__experience {
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 3rem;
-
-    &-column {
-
-      &>.about__exp-item {
-        margin-bottom: 4rem;
-      }
-      &>.about__edu-item {
-        margin-bottom: 1.25rem;
-      }
-
-      h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-        color: $primary-text-color;
-      }
-
-      p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-      }
-    }
+  /* Shared Section Styling */
+  &__skills,
+  &__experience,
+  &__education,
+  &__certifications,
+  &__volunteer {
+    margin-top: 5rem;
   }
 
   &__subheader {
     font-size: 2rem;
     font-weight: 700;
-    margin: 3rem 0 1.5rem;
-    border-left: 4px solid $primary-link-text-color;
+    margin: 0 0 1.5rem;
+    border-left: 4px solid var(--primary-link-text-color);
     padding-left: 0.75rem;
-    color: $primary-text-color;
+    color: var(--primary-text-color);
+  }
+
+  /* Skills */
+  &__skills {
+    margin-bottom: 1rem;
+  }
+
+  /* Card Layouts */
+  &__section-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__section-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 1.25rem;
+    background: var(--supporting-color);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    box-shadow: 0 1.25rem 3rem rgba(15, 23, 42, 0.06);
+  }
+
+  &__card-title {
+    margin: 0 0 1rem;
+    color: var(--primary-text-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__card-subtitle {
+    margin: -0.5rem 0 1rem;
+    color: var(--secondary-text-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  &__card-list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--primary-text-color);
+      line-height: 1.65;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.7rem;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--primary-link-text-color);
+      }
+    }
+  }
+
+  /* Professional Experience */
+  &__experience {
+    margin-bottom: 0;
+  }
+
+  &__exp-item {
+    margin-bottom: 0;
+  }
+
+  /* Education */
+  &__education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  &__edu-item {
+    margin-bottom: 0;
+
+    h3 {
+      margin: 0 0 0.5rem;
+      color: var(--primary-text-color);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0;
+      color: var(--secondary-text-color);
+      line-height: 1.6;
+    }
+  }
+
+  /* Certifications */
+  &__certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 
   &__cert-item {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0;
+
+    h3 {
+      margin: 0 0 0.5rem;
+      color: var(--primary-text-color);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      color: var(--secondary-text-color);
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
   }
 
+  /* Volunteer Experience */
   &__volunteer-items {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 
   &__volunteer-item {
-    margin-bottom: 4rem;
-
-    p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-      }
+    margin-bottom: 0;
 
     h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-        color: $primary-text-color;
+      margin: 0 0 1rem;
+      color: var(--primary-text-color);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0 0 0.85rem;
+      color: var(--primary-text-color);
+      line-height: 1.65;
+
+      &:last-child {
+        margin-bottom: 0;
       }
+    }
   }
 }
 
-/* 📲 Tablet (≤900px) */
+/* Small desktop / laptop / when DevTools is open */
+@media (max-width: 1200px) {
+  .about {
+    &__top {
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    &__img {
+      width: 420px;
+      height: 560px;
+    }
+
+    &__intro {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+  }
+}
+
+/* Tablet (≤900px) */
 @media (max-width: 900px) {
   .about {
     @include tablet-spacing;
@@ -142,20 +263,28 @@
       font-size: 1rem;
     }
 
-    &__subheader {
-      font-size: 1.75rem;
-      margin: 2rem 0 1rem;
+    &__skills,
+    &__experience,
+    &__education,
+    &__certifications,
+    &__volunteer {
+      margin-top: 4rem;
     }
 
-    &__experience,
+    &__subheader {
+      font-size: 1.75rem;
+    }
+
+    &__section-grid--two,
+    &__education-grid,
+    &__certifications-grid,
     &__volunteer-items {
       grid-template-columns: 1fr;
-      gap: 2rem;
     }
   }
 }
 
-/* 📱 Mobile (≤600px) */
+/* Mobile (≤600px) */
 @media (max-width: 600px) {
   .about {
     @include mobile-spacing;
@@ -199,12 +328,242 @@
       width: 100%;
     }
 
+    &__skills,
+    &__experience,
+    &__education,
+    &__certifications,
+    &__volunteer {
+      margin-top: 3rem;
+    }
+
     &__subheader {
       font-size: 1.5rem;
-      margin: 1.5rem 0 1rem;
+      margin-bottom: 1rem;
       text-align: center;
       border-left: none;
       padding-left: 0;
     }
+
+    &__card {
+      border-radius: 1rem;
+      padding: 1.1rem;
+    }
+
+    &__card-title,
+    &__volunteer-item h3 {
+      font-size: 1.1rem;
+    }
   }
 }
+
+// @use "../../styles/partials/mixins" as *;
+// @use "../../styles/partials/variables" as *;
+
+// .about {
+//   @include desktop-spacing;
+//   margin-top: 5rem;
+//   color: $primary-text-color;
+
+//   /* Top Section */
+//   &__top {
+//     display: flex;
+//     gap: 5rem;
+//     align-items: flex-start;
+//   }
+
+//   &__img {
+//     width: 500px;
+//     height: 680px;
+//     border-radius: 16px;
+//     object-fit: cover;
+//     margin: 3rem 0 1.5rem;
+//   }
+
+//   &__intro {
+//     flex: 1;
+//     font-size: 1.05rem;
+//     color: $primary-text-color;
+//   }
+
+//   &__text {
+//     margin-bottom: 1.25rem;
+//   }
+
+//   &__actions {
+//     margin-top: 2rem;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     gap: 2rem;
+//   }
+
+//   &__buttons {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 1rem;
+//   }
+
+//   &__links {
+//     @include flex(row, flex-start, center);
+//     gap: 1rem;
+//   }
+
+//   /* Skills */
+//   &__skills {
+//     margin-top: 6rem;
+//     margin-bottom: 4rem;
+//   }
+
+//   /* Experience & Education */
+//   &__experience {
+//     margin-bottom: 2rem;
+//     display: grid;
+//     grid-template-columns: 1.5fr 1fr;
+//     gap: 3rem;
+
+//     &-column {
+
+//       &>.about__exp-item {
+//         margin-bottom: 4rem;
+//       }
+//       &>.about__edu-item {
+//         margin-bottom: 1.25rem;
+//       }
+
+//       h3 {
+//         font-size: 1.25rem;
+//         font-weight: 600;
+//         margin-bottom: 0.3rem;
+//         color: $primary-text-color;
+//       }
+
+//       p {
+//         font-size: 1rem;
+//         margin-bottom: 1rem;
+//       }
+//     }
+//   }
+
+//   &__subheader {
+//     font-size: 2rem;
+//     font-weight: 700;
+//     margin: 3rem 0 1.5rem;
+//     border-left: 4px solid $primary-link-text-color;
+//     padding-left: 0.75rem;
+//     color: $primary-text-color;
+//   }
+
+//   &__cert-item {
+//     margin-bottom: 1.25rem;
+//   }
+
+//   &__volunteer-items {
+//     display: grid;
+//     grid-template-columns: 1.5fr 1fr;
+//   }
+
+//   &__volunteer-item {
+//     margin-bottom: 4rem;
+
+//     p {
+//         font-size: 1rem;
+//         margin-bottom: 1rem;
+//       }
+
+//     h3 {
+//         font-size: 1.25rem;
+//         font-weight: 600;
+//         margin-bottom: 0.3rem;
+//         color: $primary-text-color;
+//       }
+//   }
+// }
+
+// /* 📲 Tablet (≤900px) */
+// @media (max-width: 900px) {
+//   .about {
+//     @include tablet-spacing;
+
+//     &__top {
+//       flex-direction: column;
+//       gap: 3rem;
+//     }
+
+//     &__img {
+//       width: 100%;
+//       height: auto;
+//       max-height: 500px;
+//       margin: 2rem 0;
+//     }
+
+//     &__intro {
+//       font-size: 1rem;
+//     }
+
+//     &__subheader {
+//       font-size: 1.75rem;
+//       margin: 2rem 0 1rem;
+//     }
+
+//     &__experience,
+//     &__volunteer-items {
+//       grid-template-columns: 1fr;
+//       gap: 2rem;
+//     }
+//   }
+// }
+
+// /* 📱 Mobile (≤600px) */
+// @media (max-width: 600px) {
+//   .about {
+//     @include mobile-spacing;
+
+//     &__top {
+//       gap: 2rem;
+//       align-items: center;
+//     }
+
+//     &__img {
+//       max-height: 350px;
+//       border-radius: 12px;
+//     }
+
+//     &__intro {
+//       font-size: 0.95rem;
+//       text-align: center;
+//     }
+
+//     &__text {
+//       text-align: center;
+//       margin-bottom: 1rem;
+//     }
+
+//     &__buttons {
+//       justify-content: center;
+//       width: 100%;
+
+//       a {
+//         width: 100%;
+//       }
+//     }
+
+//     &__links {
+//       justify-content: center;
+//       width: 100%;
+//     }
+
+//     &__button {
+//       display: block;
+//       width: 100%;
+//     }
+
+//     &__subheader {
+//       font-size: 1.5rem;
+//       margin: 1.5rem 0 1rem;
+//       text-align: center;
+//       border-left: none;
+//       padding-left: 0;
+//     }
+//   }
+// }
+

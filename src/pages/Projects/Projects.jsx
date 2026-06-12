@@ -127,7 +127,7 @@ const Projects = ({all, isDark}) => {
       <h1 className="projects__header fade-in-up">Featured Projects</h1>
       {!all ?
         <p className="projects__description fade-in-up stagger-1">Explore a selection of my work</p>
-        : <p className="projects__description fade-in-up stagger-1">Browse my portfolio and discover the technologies I use</p>
+        : <p className="projects__description projects__description--all fade-in-up stagger-1">Browse my portfolio and discover the technologies I use</p>
       }
 
       <div className="projects__cards ">
