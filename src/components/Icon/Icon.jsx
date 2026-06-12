@@ -1,7 +1,7 @@
 import "./Icon.scss";
 import posthog from "posthog-js";
 
-const Icon = ({link, component, style, linkStyle, icon_name}) => {
+const Icon = ({link, component, style, linkStyle, icon_name, target}) => {
     const handleClick = () => {
     posthog.capture('icon_clicked', {
       button_link: link,
@@ -17,18 +17,19 @@ const Icon = ({link, component, style, linkStyle, icon_name}) => {
   };
 
   return (
-    <div className={`icon ${style}`}>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={linkStyle}
-        onClick={handleClick}
-      >
-        {component}
-      </a>
-    </div>
-  )
+		<div className={`icon ${style}`}>
+			<a
+				href={link}
+				target={target}
+				rel={target === "_blank" ? "noopener noreferrer" : undefined}
+				rel="noopener noreferrer"
+				className={linkStyle}
+				onClick={handleClick}
+			>
+				{component}
+			</a>
+		</div>
+	);
 }
 
 export default Icon;

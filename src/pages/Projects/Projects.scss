@@ -3,7 +3,7 @@
 
 .projects {
     @include desktop-spacing;
-    margin: 0 auto 7rem auto;
+    margin: 2rem auto 7rem auto;
     
     &__header {
       @include header;
