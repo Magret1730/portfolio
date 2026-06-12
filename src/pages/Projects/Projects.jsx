@@ -100,8 +100,8 @@ const Projects = ({all, isDark}) => {
 				"A transportation booking platform connecting users to local services with a simple and user-friendly interface.",
 			skills: "React.js, Express.js, Node.js, MySQL, Sass",
 			liveLink: {
-				pathname: "https://github.com/Magret1730/omnicoders-ip-client",
-				target: "_blank",
+				pathname: "/ProjectSummary/SeamlessProject",
+				target: "_self",
 			},
 			githubLink: "https://github.com/Magret1730/omnicoders-ip-client",
 		},
