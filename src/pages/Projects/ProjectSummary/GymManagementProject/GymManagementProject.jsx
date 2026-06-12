@@ -3,6 +3,7 @@ import "./GymManagementProject.scss";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../../../components/Button/Button";
 import { FaArrowLeft } from "react-icons/fa";
+import posthog from "posthog-js";
 
 const GymManagementProject = () => {
   const navigate = useNavigate();
@@ -40,28 +41,25 @@ const GymManagementProject = () => {
 				<div className="gym-summary-page__hero-content">
 					<div className="gym-summary-page__hero-header">
 						<p className="gym-summary-page__label">Java Backend Project</p>
+						<div
+							className="gym-summary-page__back-link"
+							onClick={() => {
+								posthog.capture("cta_clicked", {
+									location: "gym_summary_page_hero_section",
+									button_name: "Go Back",
+								});
 
-            <Link to="/projects" className="gym-summary-page__back-link-wrapper">
-              <div
-                className="gym-summary-page__back-link"
-                onClick={() => {
-                  posthog.capture("cta_clicked", {
-                    location: "gym_summary_page_hero_section",
-                    button_name: "Go Back",
-                  });
-
-                  navigate(-1);
-                }}
-              >
-                <FaArrowLeft />
-                <span className="gym-summary-page__back-link-text">
-                  Back to Projects
-                </span>
-              </div>
-            </Link>
+								navigate("/projects");
+							}}
+						>
+							<FaArrowLeft />
+							<span className="gym-summary-page__back-link-text">
+								Back to Projects
+							</span>
+						</div>
 					</div>
 
-					<h1>Gym Management System</h1>
+					<h1 className="gym-summary-page__title">Gym Management System</h1>
 
 					<p className="gym-summary-page__intro">
 						A console-based Java application for managing gym users,
