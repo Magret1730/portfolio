@@ -26,7 +26,7 @@ const Projects = ({all, isDark}) => {
       title: "Da Refiner's Fire",
       description: "Da Refiner's Fire (DRF) is a ministry-focused website designed to share spirit-filled short videos.",
       skills: "React, MUI, Next.js, Typescript, Tailwindcss, Posthog, EmailJS",
-      liveLink: "https:darefinersfire.org",
+      liveLink: "https://darefinersfire.org",
       githubLink: "https://github.com/Magret1730/darefinersfire"
     },
     {
