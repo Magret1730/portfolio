@@ -6,6 +6,7 @@ import TaskifyHub from "../../assets/Images/taskify-hub.png";
 import SeamLess from "../../assets/Images/seamless.png";
 import HarryPotter from "../../assets/Images/harry-potter.png";
 import DaRefinersFire from "../../assets/Images/drfWebsite.png";
+import Joborg from "../../assets/Images/Joborg.png";
 import JavaGymManagementSystem from "../../assets/Images/JavaGymManagement.jpeg";
 import Project from "../../components/Project/Project";
 import Button from "../../components/Button/Button";
@@ -21,6 +22,19 @@ const Projects = ({all, isDark}) => {
   }, []);
 
   const projectData = [
+		{
+			image: Joborg,
+			title: "Joborg",
+			description:
+				"Joborg helps users track career pages, detect updates, and receive alerts when new opportunities appear.",
+			skills:
+				"React, MUI, Next.js, Typescript, Tailwindcss, Express.js, EmailJS",
+			liveLink: {
+				pathname: "https://joborg-frontend.vercel.app/",
+				target: "_blank",
+			},
+			githubLink: "https://github.com/Magret1730/joborg-frontend",
+		},
 		{
 			image: DaRefinersFire,
 			title: "Da Refiner's Fire",
